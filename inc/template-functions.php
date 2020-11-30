@@ -45,6 +45,8 @@ add_action( 'wp_head', 'bcaf_pingback_header' );
 */
 function bcaf_category_acf_image() {
 
+	// Fix loop error here
+/*
 	$terms = get_the_terms( get_the_ID(), 'award_categories'); 
 
 	foreach($terms as $term) {
@@ -57,6 +59,7 @@ function bcaf_category_acf_image() {
 	$image = wp_get_attachment_image($image_id, array('300'), "", array( "class" => "brand-logo" ));
 
 	return $image;
+*/
 }
 
 
@@ -112,6 +115,7 @@ function _gf_loader() {
 	//if (!isset($type)) {
 	//	$type = get_field('gf_form_id');
 	//}
+if (!is_admin()) {
 	if (get_field('gf_form_id')) {
 		$form_id = get_field('gf_form_id'); 
 		
@@ -121,7 +125,7 @@ function _gf_loader() {
 	} else {
 		die();
 	}
-
+}
 }
 
 //add_shortcde('accordion-start','_accordion_start');

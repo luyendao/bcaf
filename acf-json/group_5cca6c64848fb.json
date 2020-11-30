@@ -111,7 +111,23 @@
             "tabs": "all",
             "toolbar": "basic",
             "media_upload": 1,
-            "delay": 0
+            "delay": 1
+        },
+        {
+            "key": "field_5fc48bd49289e",
+            "label": "Main Body Video",
+            "name": "main_body_video",
+            "type": "url",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_5ed5e27e6733d",
@@ -328,7 +344,7 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "delay": 0
+            "delay": 1
         },
         {
             "key": "field_5d6ea083bef2e",
@@ -363,7 +379,7 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "delay": 0
+            "delay": 1
         },
         {
             "key": "field_5ccb4446e2f85",
@@ -382,7 +398,7 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "delay": 0
+            "delay": 1
         },
         {
             "key": "field_5ccb4479e2f86",
@@ -401,7 +417,7 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "delay": 0
+            "delay": 1
         },
         {
             "key": "field_5d6db7d8adb15",
@@ -420,7 +436,7 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "delay": 0
+            "delay": 1
         },
         {
             "key": "field_5cca79856aa9b",
@@ -793,5 +809,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1605744745
+    "modified": 1606716439
 }

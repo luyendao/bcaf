@@ -1343,8 +1343,8 @@ li.awardee-aod {
 }
 
 li.awardee-aod img {
-	max-width: 220px;
-	min-width:220px;
+	max-width: 180px;
+	min-width:180px;
 	margin-bottom: 30px;
 }
 
@@ -1419,4 +1419,13 @@ blockquote p, blockquote {
 
 .facetwp-facet div {
 background: #fff !important;
+}
+
+
+
+/* EXCEPTIONS */
+
+/* IBA 2020 images are logos, so make the row 100% instead of 50% */
+.postid-6177 li.awardee-iba {
+	width: 100% !important;
 }

@@ -1185,7 +1185,7 @@ line-height: 24px;
 
 
 .elementor-183 .elementor-element.elementor-element-5c459d9 {
-	max-width: 830px !important;
+	max-width: 700px !important;
 }
 
 
@@ -1428,4 +1428,8 @@ background: #fff !important;
 /* IBA 2020 images are logos, so make the row 100% instead of 50% */
 .postid-6177 li.awardee-iba {
 	width: 100% !important;
+}
+
+.postid-9212 .elementor-183 .elementor-element.elementor-element-5c459d9>.elementor-widget-container {
+	background-color: rgb(130, 130, 130, 0.8 ) !important;
 }

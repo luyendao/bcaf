@@ -27,7 +27,7 @@ elseif(get_field('award_of_distinction', $aid)):
 	$status_label = sprintf('%s & %s', 'Award of Distinction', get_field('status', $aid));
 else:
 
-	$status_label = 'Recipient';
+	$status_label = '';
 
 endif;
 

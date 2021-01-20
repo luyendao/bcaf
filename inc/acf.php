@@ -440,6 +440,7 @@ function _awardees_by_taxonomy( $atts ){
     // Display Awardees if boolean is TRUE or if user is logged in for debugging
     if ( is_user_logged_in() || !is_user_logged_in()):
 
+
         // award_year term ID
         $terms_award_year = get_the_terms( $post->ID, 'award_year' ); 
 
@@ -492,7 +493,7 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $business_oty_two_person ):
                         // Loop ACF relationship and return post ID
                         foreach ( $business_oty_two_person as $aid ):
-                             $header = 'Business of the Year - one to two person enterprise';
+                             $header = 'Business of the Year – one to two person enterprise';
                              $temp4.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
 
@@ -507,7 +508,7 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $business_oty_three_ten_person ):
                         // Loop ACF relationship and return post ID
                         foreach ( $business_oty_three_ten_person as $aid ):
-                             $header = 'Business of the Year - three to 10 person enterprise';
+                             $header = 'Business of the Year – three to 10 person enterprise';
                              $temp5.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
 
@@ -583,7 +584,7 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $coboty_two_more_entity ):
                         // Loop ACF relationship and return post ID
                         foreach ( $coboty_two_more_entity as $aid ):
-                             $header = 'Community-Owned – two or more entities';
+                             $header = 'Community-Owned Business of the Year – two or more entities';
                              $temp11.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
 
@@ -672,7 +673,6 @@ function _awardees_by_taxonomy( $atts ){
 
          // Return final markup for IBA Awardees
          return '<div class="program-awardees-list" style="margin-bottom:30px;float:left;"><ul>' . $out . '</ul></div>';                    
-
 
 
 

@@ -355,7 +355,7 @@
                 "Outstanding Business Achiever": "Outstanding Business Achiever"
             },
             "default_value": false,
-            "allow_null": 0,
+            "allow_null": 1,
             "multiple": 0,
             "ui": 0,
             "return_format": "value",
@@ -447,5 +447,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1605808260
+    "modified": 1606935304
 }

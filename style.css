@@ -1075,15 +1075,18 @@ line-height: 24px;
 }
 
 .awardees-banner span {
-	line-height: 120px;
-	display: block;
+	position: absolute;
+    	top: 50%;
+    	left: 50%;
+    	transform: translate(-50%, -50%);
+    	width: 100%;
 }
 
 /* Defunct */
-.award_categories-bc-achievement-community-award .awardees-banner { background:url('images/com-banner.jpg') no-repeat;  }
-.award_categories-carter-wosk-award-in-applied-art-and-design .awardees-banner { background:url('images/aad-banner.jpg') no-repeat;  }
-.award_categories-bc-indigenous-business-award .awardees-banner { background:url('images/iba-banner.jpg') no-repeat;  }
-.award_categories-fulmer-award-in-first-nations-art .awardees-banner { background:url('images/fna-banner.jpg') no-repeat;  }
+.award_categories-bc-achievement-community-award .awardees-banner { background:url('images/com-banner.jpg') repeat-y; position:relative;  }
+.award_categories-carter-wosk-award-in-applied-art-and-design .awardees-banner { background:url('images/aad-banner.jpg')  repeat-y; position:relative; }
+.award_categories-bc-indigenous-business-award .awardees-banner { background:url('images/iba-banner.jpg')  repeat-y; position:relative;  }
+.award_categories-fulmer-award-in-first-nations-art .awardees-banner { background:url('images/fna-banner.jpg')  repeat-y; position:relative; }
 
 /* Taxonomy H2 title */
 .award_categories-bc-achievement-community-award .nomination-status h2,

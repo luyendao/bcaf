@@ -1417,6 +1417,29 @@ blockquote p, blockquote {
 .gform_wrapper ul.gfield_radio li { overflow: visible !important; }
 .gfield_consent_description { font-size: 16px !important; padding: 15px !important;}
 
+/*Usability Styling */
+
+.validation_message, .gform_wrapper .gfield_error .gfield_label, .gfield_error ul.gfield_radio { 
+	color: #bb5858 !important;
+}
+
+.validation_error { 
+	border-top: 1px solid #bb5858 !important;
+	border-bottom: 1px solid #bb5858 !important;
+	color: #bb5858 !important;
+}
+
+.validation_message > ul {
+	margin-left:0;
+	padding-left:0;
+}
+
+.gform_wrapper li.gfield.gfield_error {
+	background-color: rgb(7 92 129 / 20%) !important;
+
+}
+
+
 .facetwp-facet div {
 background: #fff !important;
 }

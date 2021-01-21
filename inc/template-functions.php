@@ -216,3 +216,22 @@ $wp_admin_bar->add_node( array(
 ) );
 }
 
+// Make Array available as local JS
+function localize_vars() {
+    return array(
+        'stylesheet_directory' => get_stylesheet_directory_uri()
+    );
+}
+
+wp_enqueue_script( 'localized_scripts', get_template_directory_uri() . '/js/localized.js', array( 'jquery' ), '20151215', true );
+wp_localize_script( 'localized_scripts', 'my_unique_name', localize_vars() );
+
+
+/* Customize File Upload Markup in Gravity Forms */
+add_filter( 'gform_file_upload_markup', 'change_upload_markup', 10, 4 );
+ 
+function change_upload_markup( $file_upload_markup, $file_info, $form_id, $field_id ) {
+  return "<img class='gform_delete' style='margin-right:5px;' src='" . get_stylesheet_directory_uri() .
+"/images/checkmark.png' 
+  onclick='gformDeleteUploadedFile({$form_id}, {$field_id }, this);' /><strong>" . esc_html( $file_info['uploaded_filename'] ) . "</strong>";
+}

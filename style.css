@@ -1037,7 +1037,8 @@ li.nav-contact {
 }
 
 .bg-category-community-award {
-	background-color: #6166af;
+background-color: rgb(130, 130, 130, 0.8 );	
+//background-color: #6166af;
 }
 
 .bg-category-business-award {

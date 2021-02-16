@@ -111,7 +111,7 @@
             "tabs": "all",
             "toolbar": "basic",
             "media_upload": 1,
-            "delay": 1
+            "delay": 0
         },
         {
             "key": "field_5fc48bd49289e",
@@ -809,5 +809,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1606716439
+    "modified": 1612374684
 }

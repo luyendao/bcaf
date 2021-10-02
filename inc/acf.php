@@ -205,7 +205,8 @@ if ( get_field('display_sponsors')) {
         }
         $supporting_orgs = "Organizations";
         $sponsor_header = "Sponsors";
-        $strategic_header = "Strategic Partners";
+	 $presentation_header = "Presentation Sponsor";
+	$strategic_header = "Strategic Partners";
         $event_header = "Event Partners";
         $donor_header = "Donors";
         $supporting_header = "Organizations";
@@ -288,11 +289,42 @@ if ( get_field('display_sponsors')) {
 
         // Output entire markup
         $out .= sprintf('<div class="row sponsors partner-sponsor"><h4>%s</h4><hr style="background-color:#00000040; margin-bottom: 15px;" />%s</div>', $sponsor_header, $sponsors_markup);
+    }
 
 
-     
+    //***** PRESENTATION SPONSOR *****//
+
+
+
+
+    if ( get_field('presentation_sponsors')) {
+
+
+        $sponsors = get_field('presentation_sponsors');
+
+        // Returns sponsor post ID 
+        foreach( $sponsors as $sid ):
+
+            $logo = get_field('sponsor_logo', $sid);
+            $url = get_field('sponsor_website_url', $sid);
+            if (empty($url)) {
+                $url = 'javascript:;';
+            }
+            $alt_title = get_field(get_the_title($sid));
+
+            $presentation_sponsor_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+
+        endforeach;
+
+
+
+        // Output entire markup
+        $out .= sprintf('<div class="row sponsors presentation-sponsor"><h4>%s</h4><hr style="background-color:#00000040; margin-bottom: 15px;" />%s</div>', $presentation_header, $presentation_sponsor_markup);
 
     }
+
+    
+
 
 
     if ( get_field('partner_type_strategic_partner')) {

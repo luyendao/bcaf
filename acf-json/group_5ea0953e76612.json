@@ -352,7 +352,8 @@
             },
             "choices": {
                 "Recipient": "Recipient",
-                "Outstanding Business Achiever": "Outstanding Business Achiever"
+                "Outstanding Business Achiever": "Outstanding Business Achiever",
+                "Award of Distinction": "Award of Distinction"
             },
             "default_value": false,
             "allow_null": 1,
@@ -417,7 +418,8 @@
                     },
                     "choices": {
                         "Recipient": "Recipient",
-                        "Outstanding Business Achiever": "Outstanding Business Achiever"
+                        "Outstanding Business Achiever": "Outstanding Business Achiever",
+                        "Award of Distinction": "Award of Distinction"
                     },
                     "default_value": false,
                     "allow_null": 0,
@@ -447,5 +449,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1606935304
+    "modified": 1620948669
 }

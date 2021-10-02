@@ -122,14 +122,12 @@ add_action( 'widgets_init', 'bcaf_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bcaf_scripts() {
-	wp_enqueue_style( 'bcaf-style', get_stylesheet_uri(), array(), '1.671');
+	wp_enqueue_style( 'bcaf-style', get_stylesheet_uri(), array(), '1.6812223123');
 	wp_enqueue_style( 'skeleton-grid', get_template_directory_uri() . '/skeleton.css' , array(), '1.5213');
 
 	wp_enqueue_script( 'bcaf-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
-	if ( is_singular( 'award' ) && get_field('gf_form_id') ) {	
-		wp_enqueue_script( 'bcaf-js', get_template_directory_uri() . '/js/general.js', array(), '20151215', true );
-	}
+		wp_enqueue_script( 'bcaf-js', get_template_directory_uri() . '/js/general.js', array(), '20151215111', true );
 	wp_enqueue_script( 'bcaf-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

@@ -61,7 +61,7 @@
         },
         {
             "key": "field_5ebc59bd05c7c",
-            "label": "Rename Sponsor Header",
+            "label": "Rename Title Sponsor Header",
             "name": "rename_sponsor_header",
             "type": "text",
             "instructions": "",
@@ -88,7 +88,7 @@
         },
         {
             "key": "field_5ebb2182a2c07",
-            "label": "Partner Type : Sponsor",
+            "label": "Title Sponsor",
             "name": "partner_type_sponsor",
             "type": "relationship",
             "instructions": "",
@@ -112,8 +112,60 @@
             "return_format": "id"
         },
         {
+            "key": "field_61576628bc368",
+            "label": "Rename Presentation Sponsors Header",
+            "name": "rename_presentation_sponsors_header",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ebc5a4505c80",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_61576617bc367",
+            "label": "Presentation Sponsors",
+            "name": "presentation_sponsors",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "sponsor"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
             "key": "field_5ebc59d105c7d",
-            "label": "Rename Strategic Partner Header",
+            "label": "Rename Category Sponsors \/ Strategic Partner",
             "name": "rename_strategic_partner_header",
             "type": "text",
             "instructions": "",
@@ -140,7 +192,7 @@
         },
         {
             "key": "field_5ebb21a9a2c08",
-            "label": "Partner Type : Strategic Partner",
+            "label": "Category Sponsors \/ Strategic Partner",
             "name": "partner_type_strategic_partner",
             "type": "relationship",
             "instructions": "",
@@ -165,7 +217,7 @@
         },
         {
             "key": "field_5ebc59e305c7e",
-            "label": "Rename Event Partner Header",
+            "label": "Rename Supporting Organizations \/ Event Partner Header",
             "name": "rename_event_partner_header",
             "type": "text",
             "instructions": "",
@@ -192,7 +244,7 @@
         },
         {
             "key": "field_5ebb21b8a2c09",
-            "label": "Partner Type : Event Partner",
+            "label": "Event Partner \/ Supporting Organizations",
             "name": "partner_type_event_partner",
             "type": "relationship",
             "instructions": "",
@@ -217,7 +269,7 @@
         },
         {
             "key": "field_5ebc59ea05c7f",
-            "label": "Rename Donor Header",
+            "label": "Rename Media Sponsors \/ Donors Header",
             "name": "rename_donor_header",
             "type": "text",
             "instructions": "",
@@ -244,7 +296,7 @@
         },
         {
             "key": "field_5ebb21c7a2c0a",
-            "label": "Partner Type : Donor",
+            "label": "Media Sponsors \/ Donors",
             "name": "partner_type_donor",
             "type": "relationship",
             "instructions": "",
@@ -312,5 +364,5 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1601328370
+    "modified": 1633117799
 }

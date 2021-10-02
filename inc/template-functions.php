@@ -235,3 +235,18 @@ function change_upload_markup( $file_upload_markup, $file_info, $form_id, $field
 "/images/checkmark.png' 
   onclick='gformDeleteUploadedFile({$form_id}, {$field_id }, this);' /><strong>" . esc_html( $file_info['uploaded_filename'] ) . "</strong>";
 }
+
+//add_filter( 'gform_field_validation_11_31', 'custom_validation', 10, 4 );
+function custom_validation( $result, $value, $form, $field ) {
+    //change value for price field to just be numeric (strips off currency symbol, etc.) using Gravity Forms to_number function
+    //the second parameter to to_number is the currency code, ie "USD", if not specified USD is used
+    $number = GFCommon::to_number( $value, '' );
+ 
+    if ( $result['is_valid'] && intval( $number ) < 20 ) {
+        $result['is_valid'] = false;
+        $result['message'] = 'You must enter at least $20.00, in order to receive a tax receipt.';
+    }
+    return $result;
+}
+
+

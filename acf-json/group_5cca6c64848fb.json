@@ -39,10 +39,10 @@
         },
         {
             "key": "field_5e89252c8797d",
-            "label": "Hero Image Caption",
+            "label": "Hero Image Caption \/ Additions",
             "name": "hero_image_caption",
-            "type": "text",
-            "instructions": "",
+            "type": "wysiwyg",
+            "instructions": "This field can be used to add a text caption or image that would appear below the main hero coloured box.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -51,10 +51,10 @@
                 "id": ""
             },
             "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         },
         {
             "key": "field_5d856c6399dea",
@@ -118,7 +118,7 @@
             "label": "Main Body Video",
             "name": "main_body_video",
             "type": "url",
-            "instructions": "",
+            "instructions": "Copy and paste a video URL - Youtube or Vimeo.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -379,7 +379,7 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "delay": 1
+            "delay": 0
         },
         {
             "key": "field_5ccb4446e2f85",
@@ -398,7 +398,7 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "delay": 1
+            "delay": 0
         },
         {
             "key": "field_5ccb4479e2f86",
@@ -417,7 +417,7 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "delay": 1
+            "delay": 0
         },
         {
             "key": "field_5d6db7d8adb15",
@@ -436,7 +436,7 @@
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "delay": 1
+            "delay": 0
         },
         {
             "key": "field_5cca79856aa9b",
@@ -809,5 +809,5 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1612374684
+    "modified": 1621287536
 }

@@ -1037,8 +1037,8 @@ li.nav-contact {
 }
 
 .bg-category-community-award {
-background-color: rgb(130, 130, 130, 0.8 );	
-//background-color: #6166af;
+//background-color: rgb(130, 130, 130, 0.8 );	
+background-color: #6166af;
 }
 
 .bg-category-business-award {
@@ -1047,6 +1047,11 @@ background-color: rgb(130, 130, 130, 0.8 );
 
 .bg-category-fulmer-award {
 	background-color: #a25855;
+}
+
+.bg-category-rec-award {
+	background: #E7B444;
+	color: #000;
 }
 
 .bg-category-global {
@@ -1088,12 +1093,16 @@ line-height: 24px;
 .award_categories-carter-wosk-award-in-applied-art-and-design .awardees-banner { background:url('images/aad-banner.jpg')  repeat-y; position:relative; }
 .award_categories-bc-indigenous-business-award .awardees-banner { background:url('images/iba-banner.jpg')  repeat-y; position:relative;  }
 .award_categories-fulmer-award-in-first-nations-art .awardees-banner { background:url('images/fna-banner.jpg')  repeat-y; position:relative; }
+.award_categories-reconciliation-award .awardees-banner { background:url('images/rec-banner.jpg')  repeat-y; position:relative; }
+
 
 /* Taxonomy H2 title */
 .award_categories-bc-achievement-community-award .nomination-status h2,
 .award_categories-bc-achievement-community-award .awardee-meta-color-fill h1,
 .award_categories-bc-achievement-community-award .awardee-meta-color-fill .elementor-post-info__terms-list-item
  { color: #6166af !important; }
+
+
 
 .award_categories-carter-wosk-award-in-applied-art-and-design .nomination-status h2, 
 .award_categories-carter-wosk-award-in-applied-art-and-design .awardee-meta-color-fill h1, 
@@ -1134,6 +1143,11 @@ line-height: 24px;
 	background-color: #6166af !important;
 }
 
+.award_categories-reconciliation-award  #award-sub-menu-overlay,
+.award_categories-reconciliation-award #award-sub-menu-overlay a.elementor-button,
+.award_categories-reconciliation-award section.nominate-form-instructions {
+	background-color: #E7B444 !important;
+}
 
 .award_categories-carter-wosk-award-in-applied-art-and-design #award-sub-menu-overlay,
 .award_categories-carter-wosk-award-in-applied-art-and-design #award-sub-menu-overlay a.elementor-button,
@@ -1167,7 +1181,10 @@ line-height: 24px;
 	opacity:1  !important;
 }
 
-/* Modify BCRA Hero CSS */
+
+
+/* Modify BCRA Hero CSS
+ * Modified April 25, 2021 - when awardees are announced 
 
 .award_categories-reconciliation-award #award-sub-menu-overlay {
 	background-color: transparent !important;
@@ -1182,7 +1199,6 @@ line-height: 24px;
 }
 
 
-/* Hide pas programs selector */
 .award_categories-reconciliation-award .elementor-element-aacc0c5 {
 	display: none;
 }
@@ -1216,7 +1232,7 @@ line-height: 24px;
 
 }
 
-
+*/
 
 /* Slider slide variations */
 

@@ -843,7 +843,6 @@ a:hover, a:active {
 	display: block;
 }
 
-.post,
 .page {
 	margin: 0 0 1.5em;
 }
@@ -1103,75 +1102,129 @@ line-height: 24px;
  { color: #6166af !important; }
 
 
-
+/* AAD */
 .award_categories-carter-wosk-award-in-applied-art-and-design .nomination-status h2, 
 .award_categories-carter-wosk-award-in-applied-art-and-design .awardee-meta-color-fill h1, 
-.award_categories-carter-wosk-award-in-applied-art-and-design  .awardee-meta-color-fill .elementor-post-info__terms-list-item
-
+.award_categories-carter-wosk-award-in-applied-art-and-design .awardee-meta-color-fill .elementor-post-info__terms-list-item,
+.award_categories-carter-wosk-award-in-applied-art-and-design.type-awardee span.elementor-divider-separator,
+.award_categories-carter-wosk-award-in-applied-art-and-design.type-awardee .elementor-blockquote__author,
+.award_categories-carter-wosk-award-in-applied-art-and-design.type-awardee .elementor-blockquote::before,
+.text-color-aad
 { color: #619f45 !important; }
 
+/* IBA */
 .award_categories-bc-indigenous-business-award .nomination-status h2,
 .award_categories-bc-indigenous-business-award  .awardee-meta-color-fill h1,
-.award_categories-bc-indigenous-business-award .awardee-meta-color-fill .elementor-post-info__terms-list-item
+.award_categories-bc-indigenous-business-award .awardee-meta-color-fill .elementor-post-info__terms-list-item,
+.award_categories-bc-indigenous-business-award.type-awardee span.elementor-divider-separator,
+.award_categories-bc-indigenous-business-award.type-awardee .elementor-blockquote__author,
+.award_categories-bc-indigenous-business-award.type-awardee .elementor-blockquote::before,
+.text-color-iba
 { color: #df8627 !important; }
 
+/* FNA */
 .award_categories-fulmer-award-in-first-nations-art .nomination-status h2,
 .award_categories-fulmer-award-in-first-nations-art .awardee-meta-color-fill h1,
-.award_categories-fulmer-award-in-first-nations-art .awardee-meta-color-fill .elementor-post-info__terms-list-item
+.award_categories-fulmer-award-in-first-nations-art .awardee-meta-color-fill .elementor-post-info__terms-list-item,
+.award_categories-fulmer-award-in-first-nations-art.type-awardee span.elementor-divider-separator,
+.award_categories-fulmer-award-in-first-nations-art.type-awardee .elementor-blockquote__author,
+.award_categories-fulmer-award-in-first-nations-art.type-awardee .elementor-blockquote::before,
+.text-color-fna
  { color: #a25855 !important; }
 
+ /* REC*/
 .award_categories-reconciliation-award .nomination-status h2,
 .award_categories-reconciliation-award .awardee-meta-color-fill h1,
-.award_categories-reconciliation-award .awardee-meta-color-fill .elementor-post-info__terms-list-item {
-
+.award_categories-reconciliation-award .awardee-meta-color-fill .elementor-post-info__terms-list-item,
+.award_categories-reconciliation-award.type-awardee span.elementor-divider-separator,
+.award_categories-reconciliation-award.type-awardee .elementor-blockquote__author,
+.award_categories-reconciliation-award.type-awardee .elementor-blockquote::before,
+.text-color-rec
+{
 	color: #E7B444 !important;
 }
 
-/* Taxonomy Icon Colors */
+/* COM */
+
+.award_categories-bc-achievement-community-award .nomination-status h2,
+.award_categories-bc-achievement-community-award .awardee-meta-color-fill h1,
+.award_categories-bc-achievement-community-award .awardee-meta-color-fill .elementor-post-info__terms-list-item,
+.award_categories-bc-achievement-community-award.type-awardee span.elementor-divider-separator,
+.award_categories-bc-achievement-community-award.type-awardee .elementor-blockquote__author,
+.award_categories-bc-achievement-community-award.type-awardee .elementor-blockquote::before
+.text-color-com
+{
+     color: #6166af !important;
+}
+
+
+/* AWARDEE POST BADGE */
+.awardee-badge .elementor-widget-container {
+	color: #fff !important;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+
+/* Taxonomy Icon Colors 
 .award_categories-bc-achievement-community-award .elementor-icon i:before { color: #6166af !important; }
 .award_categories-carter-wosk-award-in-applied-art-and-design .elementor-icon i:before { color: #619f45 !important; }
 .award_categories-bc-indigenous-business-award .elementor-icon i:before { color: #df8627 !important; }
 .award_categories-fulmer-award-in-first-nations-art .elementor-icon i:before { color: #a25855 !important; }
 .award_categories-reconciliation-award .elementor-icon i:before { color: #E7B444 !important; }
-
+*/
 
 /* Taxonomy -> Sub-Menu, and Ahref */
 .award_categories-bc-achievement-community-award #award-sub-menu-overlay,
+.award_categories-bc-achievement-community-award #award-sub-menu-overlay > div,
 .award_categories-bc-achievement-community-award #award-sub-menu-overlay a.elementor-button,
-.award_categories-bc-achievement-community-award section.nominate-form-instructions
- {
+.award_categories-bc-achievement-community-award section.nominate-form-instructions,
+.award_categories-bc-achievement-community-award .awardee-badge .elementor-widget-container,
+.bg-color-com
+{
 	background-color: #6166af !important;
 }
 
 .award_categories-reconciliation-award  #award-sub-menu-overlay,
+.award_categories-reconciliation-award  #award-sub-menu-overlay > div,
 .award_categories-reconciliation-award #award-sub-menu-overlay a.elementor-button,
-.award_categories-reconciliation-award section.nominate-form-instructions {
+.award_categories-reconciliation-award section.nominate-form-instructions,
+.award_categories-reconciliation-award .awardee-badge .elementor-widget-container,
+.bg-color-rec
+{
 	background-color: #E7B444 !important;
 }
 
 .award_categories-carter-wosk-award-in-applied-art-and-design #award-sub-menu-overlay,
+.award_categories-carter-wosk-award-in-applied-art-and-design #award-sub-menu-overlay > div,
 .award_categories-carter-wosk-award-in-applied-art-and-design #award-sub-menu-overlay a.elementor-button,
-.award_categories-carter-wosk-award-in-applied-art-and-design section.nominate-form-instructions
- {
+.award_categories-carter-wosk-award-in-applied-art-and-design section.nominate-form-instructions,
+.award_categories-carter-wosk-award-in-applied-art-and-design .awardee-badge .elementor-widget-container,
+.bg-color-aad
+{
 	background-color: #619f45 !important;
 }
 
 
 .award_categories-bc-indigenous-business-award #award-sub-menu-overlay,
+.award_categories-bc-indigenous-business-award #award-sub-menu-overlay > div,
 .award_categories-bc-indigenous-business-award #award-sub-menu-overlay a.elementor-button,
-.award_categories-bc-indigenous-business-award section.nominate-form-instructions
+.award_categories-bc-indigenous-business-award section.nominate-form-instructions,
+.award_categories-bc-indigenous-business-award .awardee-badge .elementor-widget-container,
+.bg-color-iba
  {
 	background-color: #df8627 !important;
 }
 
 .award_categories-fulmer-award-in-first-nations-art #award-sub-menu-overlay,
+.award_categories-fulmer-award-in-first-nations-art #award-sub-menu-overlay > div,
 .award_categories-fulmer-award-in-first-nations-art #award-sub-menu-overlay a.elementor-button,
-.award_categories-fulmer-award-in-first-nations-art section.nominate-form-instructions
+.award_categories-fulmer-award-in-first-nations-art section.nominate-form-instructions,
+.award_categories-fulmer-award-in-first-nations-art .awardee-badge .elementor-widget-container,
+.bg-color-fna
  {
 	background-color: #a25855 !important;
 }
-
-
 
 .award_categories-reconciliation-award .elementor-background-overlay,
 .award_categories-reconciliation-award #award-sub-menu-overlay a.elementor-button,
@@ -1464,7 +1517,74 @@ blockquote p, blockquote {
 background: #fff !important;
 }
 
+/* POST LOOP PLUGIN */
 
+.ecs-post-loop .category-community-award .elementor-element-populated,
+.border-com .elementor-element-populated {
+	border-color: #6065AF;
+}
+
+.ecs-post-loop .category-carter-wosk-applied-art-design-award .elementor-element-populated,
+.border-aad .elementor-element-populated {
+	border-color: #5F9F44;
+	background-color:#5F9F44;
+}
+.ecs-post-loop .category-indigenous-business-award .elementor-element-populated,
+	.border-iba .elementor-element-populated {
+	border-color: #DF8527;
+}
+
+.ecs-post-loop .category-fulmer-award-first-nations-art .elementor-element-populated,
+	.border-fna .elementor-element-populated {
+	border-color: #A25854;
+}
+
+.ecs-post-loop .category-british-columbia-reconciliation-award .elementor-element-populated,
+	.border-rec .elementor-element-populated {
+	border-color: #EFC45B;
+}
+
+.ecs-post-loop .category-blog .elementor-element-populated {
+	border-color: #075C81;
+}
+
+.ecs-post-loop .tax-blog {
+    color: white !important;
+}
+
+/* POST LOOP BLOCK 2 COLUMNS */ 
+
+@media (min-width: 768px and max-width: 1023px) {
+}
+
+@media (min-width: 1024px) {
+
+	/* Block 1 */
+	.elementor-12841 .elementor-element.elementor-element-222f5a74 {
+		width: 770px !important;
+	}
+        /* Block 2 */
+	.elementor-element-2ac1c2b3 { width: 370px !important; }
+}
+
+@media (max-width: 767px) {
+	.elementor-element-2ac1c2b3 { width: 100%; }
+}
+
+
+/* ADDITIONAL CSS */
+.clip-circle {
+  clip-path: circle(100px at center);
+}
+
+.button {
+    background-color: #075C81;
+    color: #fff !important;;
+    padding: 15px;
+    margin-top:15px;
+    border-radius: 5px;
+    box-shadow: 4px 4px #a7a7a736;
+}
 
 /* EXCEPTIONS */
 

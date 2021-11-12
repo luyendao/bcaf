@@ -11,6 +11,158 @@ add_shortcode( 'awardees', '_awardees_by_taxonomy' );
 
 add_shortcode( 'awardees_banner', '_awardees_banner' );
 add_shortcode( 'awardees_aod', '_awardee_aod' );
+add_shortcode( 'home_features','_home_features');
+add_shortcode( 'awardee_profile','_awardee_profile');
+add_shortcode( 'awardee_profile_awards','_awardee_profile_awards');
+add_shortcode( 'social_media_icons','_social_media_icons');
+
+
+// Elementor Icons based on ACF Fields
+function _social_media_icons() {
+
+$css = NULL;
+
+if ( !get_field('facebook_link')) {
+	$css = '.elementor-social-icon-facebook { display: none;}';
+}
+
+if ( !get_field('twitter_link')) {
+        $css .= '.elementor-social-icon-twitter { display: none;}';
+}
+
+if ( !get_field('youtube_link')) {
+        $css .= '.elementor-social-icon-youtube { display: none;}';
+}
+
+if ( !get_field('linkedin_link')) {
+        $css .= '.elementor-social-icon-linkedin { display: none;}';
+}
+
+if ( !get_field('instagram_link')) {
+        $css .= '.elementor-social-icon-instagram { display: none;}';
+}
+
+if ( !get_field('youtube_video_url') || !get_field('youtube_video_url_2')) {
+	$css .= '.single-awardee section#awardee-videos { display: none;}';
+}
+
+$css_out =  sprintf('<style>%s</style>', $css);
+
+return $css_out;
+
+
+}
+
+
+
+// Display award logo 
+
+function _awardee_profile_awards() {
+
+	   $term_list = wp_get_post_terms( get_the_ID(), 'award_categories', array( 'fields' => 'ids' ) );
+                $current_term_id = $term_list[0];
+
+
+                // COM
+                if ($current_term_id == 2) {
+			$image = $image = sprintf('<img src="%s/wp-content/uploads/2019/05/BCAF-Community-Award_logo.png" alt="Award Logo" />',site_url());
+	
+		}
+                // AAD
+                if ($current_term_id == 3) {
+			$image = sprintf('<img src="%s/wp-content/uploads/2019/04/BCAF-Carter-Wosk-Applied-Art-Design-Logo_color-e1557866569710-1024x264.png" alt="Award Logo" />',site_url());
+		} 
+	      	// FNA	
+                if ($current_term_id == 4) {
+			$image = sprintf('<img src="%s/wp-content/uploads/2019/05/BCAF-Fulmer-Awards-First-Nations-Art-Logo.png" alt="Award Logo" />',site_url());
+		}
+		//IBA
+                if ($current_term_id == 5) {
+			$image = sprintf('<img src="%s/wp-content/uploads/2019/05/BCAF-Indigenous-Business-Award-Logo.png" alt="Award Logo" />',site_url());
+		}
+		// REC
+		if ($current_term_id == 146) {
+			$image = sprintf('<img src="%s/wp-content/uploads/2020/10/BCRA-Logo.png" alt="Award Logo" />',site_url());
+		
+		}
+
+	//return  $current_term_id;
+	return $image;
+}
+
+
+// Displays awardee profile snippet from ACF Post Object
+function _awardee_profile() {
+
+if (!get_field('select_awardee_profile')) {
+	return;
+}
+// Return one object
+	wp_reset_postdata();
+	$awardee_id = get_field('select_awardee_profile');	
+	$title = get_the_title($awardee_id);
+	$permalink = get_permalink($awardee_id);
+	$bio = wp_trim_words(get_post_field('post_content', $awardee_id), 70);//wp_trim_words(get_the_content($awardee_id));
+	$image = get_the_post_thumbnail($awardee_id,'medium',array('class'=>'clip-circle') );
+	$out = sprintf('<div class="row"><div class="columns four"><a href="%s">%s</a></div><div class="columns six"><h2>%s</h2>%s<br /><br /><a href="%s" class="button">%s\'s Profile</a></div></div>', $permalink,$image,$title,$bio,$permalink,$title);
+	return $out;
+}
+
+// Output shortcode based on ACF field grid_type_select from homepage
+function _home_features(){
+
+	$current = get_field('grid_type_select');
+
+	if ($current == 'option2'){
+	// One + 3 Blogs
+		echo do_shortcode('[elementor-template id="12844"]');
+		echo do_shortcode('[elementor-template id="12838"]');
+
+	} elseif ($current == 'option3') {
+	// Two + 3 Blogs
+		echo do_shortcode('[elementor-template id="12841"]');
+		echo do_shortcode('[elementor-template id="12838"]');
+
+	} elseif ($current == 'option1') {
+	// Default 6 Blogs
+		echo do_shortcode('[elementor-template id="12851"]');
+	// Video + 3 Blocks
+	} elseif ( $current == 'option4') {
+		echo do_shortcode('[elementor-template id="13455"]');
+		echo do_shortcode('[elementor-template id="12838"]');
+	} elseif ( $current == 'option5') {
+                echo do_shortcode('[elementor-template id="13455"]');
+        }	
+}
+
+
+
+
+// ACF OPTIONS
+if( function_exists('acf_add_options_page') ) {
+	
+	acf_add_options_page(array(
+		'page_title' 	=> 'Global Settings',
+		'menu_title'	=> 'Global Settings',
+		'menu_slug' 	=> 'general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+/*	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Header Settings',
+		'menu_title'	=> 'Header',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+	
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+ */	
+}
+
 
 function _awardee_aod($atts) {
 
@@ -34,8 +186,12 @@ function _awardee_aod($atts) {
         }
 
         if (get_field('crabtree_mclennan_emerging_artist_award') == 1) {
-            $title = sprintf('<div class="crabtree">Crabtree McLennan Emerging Artist Award</div>');
-        }              
+            $title = sprintf('<div class="crabtree">Crabtree McLennan Emerging Artist</div>');
+	}             
+
+        if (get_field('judson_beaumont_emerging_artist', $id) === true) {
+            $title = sprintf('<em>%s</em>', 'Judson Beaumont Emerging Artist');
+        }
 
         // IBA ONLY
 
@@ -78,6 +234,7 @@ function _awardee_aod($atts) {
 }
 
 
+/* Award Program Category Banner */
 function _awardees_banner($atts) {
     if (get_field('show_awardees_honoured_banner') && is_singular('award')) {
 
@@ -94,8 +251,6 @@ function _awardees_banner($atts) {
 
                // Get Award Year Slug and Name
                 foreach($terms_award_year as $term) {
-                  //$term_year_id = $term->term_id;
-                  //$term_year_slug = $term->slug;
                   $term_year_name = $term->name;
                 }
 
@@ -502,6 +657,8 @@ function _awardees_by_taxonomy( $atts ){
 
                     $out = NULL;
 
+	// If display_awardees ACF boolean is enabled
+	if ( get_field('display_awardees') == 1) {
 
                     // Young Entrepreneur of the Year
                     $yeoty = get_field('young_entrepreneur_of_the_year', $post->ID);
@@ -518,7 +675,6 @@ function _awardees_by_taxonomy( $atts ){
                     endif; 
 
         /*** BUSINESS OF THE YEAR ****/
-
 
                     // Business of the Year - one to two person enterprise
                     $business_oty_two_person = get_field('business_of_the_year_-_one_to_two_person_enterprise', $post->ID);
@@ -706,7 +862,7 @@ function _awardees_by_taxonomy( $atts ){
          // Return final markup for IBA Awardees
          return '<div class="program-awardees-list" style="margin-bottom:30px;float:left;"><ul>' . $out . '</ul></div>';                    
 
-
+	} // End display_awardees ACF boolean if statement
 
         } else {
 
@@ -716,7 +872,13 @@ function _awardees_by_taxonomy( $atts ){
         ********************************************************/            
 
 
-            // Get all awardees 
+	$awardees_header = '';
+
+	// Check boolean display awardees or not
+	if ( get_field('display_awardees') == 1) {
+	     $awardees_header = sprintf('<h3>%s Awardees:</h3>', $term_year_name);
+ 
+	    // Get all awardees 
             $value = get_posts(array(
                 'post_type'      => 'awardee',
                 'posts_per_page' => -1,
@@ -745,14 +907,6 @@ function _awardees_by_taxonomy( $atts ){
 
 
 
-            $aod_header ='';
-            if (get_field('display_awardees') == 1) {
-                $awardees_header = sprintf('<h3>%s Awardees:</h3>', $term_year_name);     
-            } else {
-                $awardees_header = '';
-            }
-            
-
             foreach ($value as $id) {
 
                 $title = get_the_title($id);
@@ -761,8 +915,14 @@ function _awardees_by_taxonomy( $atts ){
                 $status = '';
 
                 if (get_field('crabtree_mclennan_emerging_artist_award', $id) === true) {
-                    $status = sprintf('<em>%s</em>', 'Crabtree McLennan Emerging Artist Award');
+                    $status = sprintf('<em>%s</em>', 'Crabtree McLennan Emerging Artist');
                 }                
+
+                if (get_field('judson_beaumont_emerging_artist', $id) === true) {
+                    $status = sprintf('<em>%s</em>', 'Judson Beaumont Emerging Artist');
+                }
+
+
 
                 // awardee_category term ID
                 $terms_award_cat = get_the_terms( $id, 'awardee_category' ); 
@@ -808,9 +968,10 @@ function _awardees_by_taxonomy( $atts ){
 
                         $aod_header = sprintf('<h3>%s %s:</h3>', $term_year_name, $award_recipient_header);
 
-                        $bio = wp_trim_words(get_post_field('post_content', $id), 40);
-
+			$bio = wp_trim_words(get_post_field('post_content', $id), 40);
+			
                         $aod_awardees .= sprintf('<li class="rows awardee-aod"><div class="columns three"><a href="%s" title="%s">%s</a></div><div class="columns eight"><a href="%s" title="%s">%s &raquo;</a><div class="awardee-city">%s</div><p>%s</p></div></li>', $link, $title, $thumbnail, $link, $title, $title, $city, $bio);
+
                     }
                     // ***************
                     // ALL AWARDEES
@@ -823,7 +984,6 @@ function _awardees_by_taxonomy( $atts ){
                         } else {
                             $column_class = 'two';
                         }   
-
                         $awardees  .= sprintf('<li class="rows awardee"><div class="columns %s"><a href="%s" title="%s">%s</a></div><div class="columns eight"><a href="%s" title="%s">%s &raquo;</a><div class="awardee-city">%s</div>%s</div></li>', $column_class, $link, $title, $thumbnail, $link, $title, $title, $city, $status);
                     }
 
@@ -846,11 +1006,12 @@ function _awardees_by_taxonomy( $atts ){
 
         } // End else statement
 
-
+}
         else:
             return;
 
         endif;
+
 
 }
 

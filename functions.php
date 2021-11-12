@@ -122,7 +122,7 @@ add_action( 'widgets_init', 'bcaf_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bcaf_scripts() {
-	wp_enqueue_style( 'bcaf-style', get_stylesheet_uri(), array(), '1.6812223123');
+	wp_enqueue_style( 'bcaf-style', get_stylesheet_uri(), array(), '1.681251231123');
 	wp_enqueue_style( 'skeleton-grid', get_template_directory_uri() . '/skeleton.css' , array(), '1.5213');
 
 	wp_enqueue_script( 'bcaf-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -159,9 +159,21 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/inc/customizer.php';
 
 /**
- * Customizer additions.
+ * ACF Related Functions
  */
 require get_template_directory() . '/inc/acf.php';
+
+
+/**
+ * Post Schemas 
+ */
+require get_template_directory() . '/inc/schema.php';
+
+/** 
+ * Menu overrides
+ */
+require get_template_directory() . '/inc/menu.php';
+
 
 /**
  * Load Jetpack compatibility file.

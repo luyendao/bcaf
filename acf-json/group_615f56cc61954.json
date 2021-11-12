@@ -1,0 +1,440 @@
+{
+    "key": "group_615f56cc61954",
+    "title": "Homepage Settings",
+    "fields": [
+        {
+            "key": "field_615f57b3e6cb4",
+            "label": "Select Grid Layout",
+            "name": "grid_type_select",
+            "type": "select",
+            "instructions": "If selecting 6 blogs, this is automated and editorial blocks will not show up.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "option1": "Six Blogs",
+                "option2": "One Announcement and 3 Blogs",
+                "option3": "Two Announcements and 3 Blogs",
+                "option4": "Video and 3 Blogs",
+                "option5": "Video Only"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 0,
+            "return_format": "value",
+            "ajax": 0,
+            "placeholder": ""
+        },
+        {
+            "key": "field_615f58223cf08",
+            "label": "Editorial Blocks",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_6189922cb99e0",
+            "label": "First Editorial Block Video",
+            "name": "first_editorial_block_video",
+            "type": "url",
+            "instructions": "Enter a Youtube URL, i.e. : https:\/\/www.youtube.com\/watch?v=5New1mrWldQ",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "==",
+                        "value": "option4"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "==",
+                        "value": "option5"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_615f58083cf07",
+            "label": "First Editorial Block Header",
+            "name": "first_editorial_block_header",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "!=",
+                        "value": "option1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_615f5b39ed53b",
+            "label": "First Editorial Block Category",
+            "name": "first_editorial_block_category",
+            "type": "select",
+            "instructions": "This will determine the border color.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "!=",
+                        "value": "option1"
+                    }
+                ],
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "==",
+                        "value": "option4"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "com": "border-com",
+                "aad": "border-aad",
+                "iba": "border-iba",
+                "fna": "border-fna",
+                "rec": "border-rec"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 1,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_615f583c3cf09",
+            "label": "First Editorial Block Link",
+            "name": "first_editorial_block_link",
+            "type": "page_link",
+            "instructions": "What does the announcement link to? Leave empty if there's no link.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "!=",
+                        "value": "option1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "page",
+                "award",
+                "awardee",
+                "post"
+            ],
+            "taxonomy": "",
+            "allow_null": 0,
+            "allow_archives": 0,
+            "multiple": 0
+        },
+        {
+            "key": "field_615f5ac48feb4",
+            "label": "First Editorial Image",
+            "name": "first_editorial_image",
+            "type": "image",
+            "instructions": "What does the announcement link to? Leave empty if there's no link.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "!=",
+                        "value": "option1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_615f58823cf0a",
+            "label": "Second Editorial Block Header",
+            "name": "second_editorial_block_header",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "==",
+                        "value": "option3"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br"
+        },
+        {
+            "key": "field_615f5b90ed53c",
+            "label": "Second Editorial Block Category",
+            "name": "second_editorial_block_category",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "==",
+                        "value": "option3"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "com": "border-com",
+                "aad": "border-aad",
+                "iba": "border-iba",
+                "fna": "border-fna",
+                "rec": "border-rec"
+            },
+            "default_value": false,
+            "allow_null": 0,
+            "multiple": 0,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "value",
+            "placeholder": ""
+        },
+        {
+            "key": "field_615f58d83cf0b",
+            "label": "Second Editorial Block Link",
+            "name": "second_editorial_block_link",
+            "type": "url",
+            "instructions": "What does the announcement link to? Leave empty if there's no link.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "==",
+                        "value": "option3"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "#",
+            "placeholder": ""
+        },
+        {
+            "key": "field_615f5ad58feb5",
+            "label": "Second Editorial Block Image",
+            "name": "second_editorial_block_image",
+            "type": "image",
+            "instructions": "What does the announcement link to? Leave empty if there's no link.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_615f57b3e6cb4",
+                        "operator": "==",
+                        "value": "option3"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
+            "key": "field_6160a42e9ddb6",
+            "label": "Rest of Page",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_615f59a330016",
+            "label": "Newsletter Sign-Up Header",
+            "name": "newsletter_sign-up_header",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_615f59b430017",
+            "label": "About BCAF Header",
+            "name": "about_bcaf_header",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_615f59c130018",
+            "label": "About BCAF Copy",
+            "name": "about_bcaf_copy",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "wpautop"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "16"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "acf_after_title",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": [
+        "permalink",
+        "the_content",
+        "excerpt",
+        "discussion",
+        "comments",
+        "revisions",
+        "slug",
+        "author",
+        "format",
+        "page_attributes",
+        "featured_image",
+        "categories",
+        "tags",
+        "send-trackbacks"
+    ],
+    "active": true,
+    "description": "",
+    "modified": 1636406429
+}

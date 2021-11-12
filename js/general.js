@@ -1,4 +1,6 @@
 jQuery(document).ready(function($){
+
+if (typeof gform !== 'undefined') { 
 	gform.addFilter('gform_file_upload_markup', function (html, file, up, strings, imagesUrl) {
   		var formId = up.settings.multipart_params.form_id,
   		fieldId = up.settings.multipart_params.field_id;
@@ -11,5 +13,5 @@ jQuery(document).ready(function($){
 	
 	});
 
-
+	}
 });

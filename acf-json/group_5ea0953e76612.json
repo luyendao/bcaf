@@ -775,6 +775,25 @@
             "endpoint": 0
         },
         {
+            "key": "field_6190844fb3a4e",
+            "label": "Display Related Posts?",
+            "name": "display_related_posts",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 0,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
             "key": "field_618c25e8b106a",
             "label": "Select Related Posts",
             "name": "related_posts",
@@ -821,5 +840,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "modified": 1636575653
+    "show_in_rest": 0,
+    "modified": 1636861034
 }

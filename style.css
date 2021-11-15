@@ -1,10 +1,10 @@
 /*!
-Theme Name: bcaf
+Theme Name: BCAF v1.1
 Theme URI: http://underscores.me/
-Author: LEAP CREATIVE
-Author URI: http://underscores.me/
-Description: Description
-Version: 1.0.0
+Author: LEAP CREATIVE GROUP
+Author URI: https://leapcreative.com
+Description: BC Achievement Foundation based on Underscores
+Version: 1.1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: bcaf
@@ -1289,9 +1289,7 @@ line-height: 24px;
 
 /* Slider slide variations */
 
-/* Post Titles */
-.community-award .elementor-post__title a,
-.community-award .uael-post__title a,
+/* Post Titles 
 .tax-community-award,
 .tax-bc-achievement-community-award,
 .bc-achievement-community-award,
@@ -1300,32 +1298,24 @@ line-height: 24px;
     color: #6166af !important;
 }
 
-.reconciliation-award .elementor-post__title a,
-.reconciliation-award .uael-post__title a,
 .tax-reconciliation-award,
 .reconciliation-award
 {
 	color: #e7b444 !important;
 }
 
-.carter-wosk-applied-art-design-award .elementor-post__title a,
-.carter-wosk-applied-art-design-award .uael-post__title a,
 .tax-carter-wosk-applied-art-design-award,
 .tax-carter-wosk-award-in-applied-art-and-design,
 .carter-wosk-award-in-applied-art-and-design {
     color: #619f45 !important;
 }
 
-.indigenous-business-award .elementor-post__title a,
-.indigenous-business-award .uael-post__title a,
 .tax-indigenous-business-award,
 .tax-bc-indigenous-business-award,
 .bc-indigenous-business-award  { 
     color: #df8627 !important;
 }
 
-.fulmer-award-in-first-nations-art .elementor-post__title a, 
-.fulmer-award-in-first-nations-art .uael-post__title a,
 .tax-fulmer-award-first-nations-art,
 .tax-fulmer-award-first-nations-art,
 .fulmer-award-in-first-nations-art  {
@@ -1333,8 +1323,6 @@ line-height: 24px;
 }
 
 
-.reconciliation-award .elementor-post__title a, 
-.reconciliation-award .uael-post__title a,
 .tax-areconciliation-award,
 .tax-reconciliation-award,
 .reconciliation-award  {
@@ -1348,7 +1336,7 @@ line-height: 24px;
 .tax-foundation-news { 
     color: #085C81 !important;
 }
-
+*/
 
 div[data-elementor-type="footer"] a {
 	color: #fff;
@@ -1521,27 +1509,26 @@ background: #fff !important;
 
 .ecs-post-loop .category-community-award .elementor-element-populated,
 .border-com .elementor-element-populated {
-	border-color: #6065AF;
+	border-color: #6065AF !important;
 }
 
 .ecs-post-loop .category-carter-wosk-applied-art-design-award .elementor-element-populated,
 .border-aad .elementor-element-populated {
-	border-color: #5F9F44;
-	background-color:#5F9F44;
+	border-color: #5F9F44 !important;
 }
 .ecs-post-loop .category-indigenous-business-award .elementor-element-populated,
 	.border-iba .elementor-element-populated {
-	border-color: #DF8527;
+	border-color: #DF8527 !important;
 }
 
-.ecs-post-loop .category-fulmer-award-first-nations-art .elementor-element-populated,
+.ecs-post-loop.category-fulmer-award-first-nations-art .elementor-element-populated,
 	.border-fna .elementor-element-populated {
-	border-color: #A25854;
+	border-color: #A25854 !important;
 }
 
-.ecs-post-loop .category-british-columbia-reconciliation-award .elementor-element-populated,
+.ecs-post-loop.category-british-columbia-reconciliation-award .elementor-element-populated,
 	.border-rec .elementor-element-populated {
-	border-color: #EFC45B;
+	border-color: #EFC45B !important;
 }
 
 .ecs-post-loop .category-blog .elementor-element-populated {

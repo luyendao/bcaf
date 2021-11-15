@@ -114,7 +114,8 @@
             ],
             "taxonomy": [
                 "award_categories:bc-achievement-community-award",
-                "award_year:2021"
+                "award_year:2021",
+                "award_year:2022"
             ],
             "allow_null": 0,
             "allow_archives": 0,
@@ -180,7 +181,8 @@
             ],
             "taxonomy": [
                 "award_year:2021",
-                "award_categories:carter-wosk-award-in-applied-art-and-design"
+                "award_categories:carter-wosk-award-in-applied-art-and-design",
+                "award_year:2022"
             ],
             "allow_null": 0,
             "allow_archives": 0,
@@ -246,7 +248,8 @@
             ],
             "taxonomy": [
                 "award_year:2021",
-                "award_categories:fulmer-award-in-first-nations-art"
+                "award_categories:fulmer-award-in-first-nations-art",
+                "award_year:2022"
             ],
             "allow_null": 0,
             "allow_archives": 0,
@@ -310,7 +313,8 @@
             "post_type": "",
             "taxonomy": [
                 "award_year:2021",
-                "award_categories:bc-indigenous-business-award"
+                "award_categories:bc-indigenous-business-award",
+                "award_year:2022"
             ],
             "allow_null": 0,
             "allow_archives": 0,
@@ -376,7 +380,8 @@
             ],
             "taxonomy": [
                 "award_year:2021",
-                "award_categories:reconciliation-award"
+                "award_categories:reconciliation-award",
+                "award_year:2022"
             ],
             "allow_null": 0,
             "allow_archives": 0,
@@ -415,5 +420,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1634012068
+    "show_in_rest": 0,
+    "modified": 1636855840
 }

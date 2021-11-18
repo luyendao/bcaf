@@ -42,7 +42,7 @@ if ( !get_field('instagram_link')) {
         $css .= '.elementor-social-icon-instagram { display: none;}';
 }
 
-if ( !get_field('youtube_video_url') || !get_field('youtube_video_url_2')) {
+if ( !get_field('youtube_video_url') && !get_field('youtube_video_url_2')) {
 	$css .= '.single-awardee section#awardee-videos { display: none;}';
 }
 

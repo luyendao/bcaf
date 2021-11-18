@@ -62,27 +62,6 @@
             "new_lines": ""
         },
         {
-            "key": "field_5cd5c7491d1e0",
-            "label": "Indigenous Business Award Nominate Link",
-            "name": "indigenous_business_award_nominate_link",
-            "type": "page_link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "form-link",
-                "id": ""
-            },
-            "post_type": [
-                "award"
-            ],
-            "taxonomy": "",
-            "allow_null": 1,
-            "allow_archives": 1,
-            "multiple": 0
-        },
-        {
             "key": "field_5cd5cdc380f56",
             "label": "Indigenous Business Award Nominate Button Label",
             "name": "indigenous_business_award_nominate_button_label",
@@ -159,27 +138,6 @@
             "maxlength": "",
             "rows": 4,
             "new_lines": ""
-        },
-        {
-            "key": "field_5cd5c820a1f68",
-            "label": "Carter Wosk Award Applied Art + Design Nominate Link",
-            "name": "carter_wosk_award_applied_art_design_nominate_link",
-            "type": "page_link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "form-link",
-                "id": ""
-            },
-            "post_type": [
-                "award"
-            ],
-            "taxonomy": "",
-            "allow_null": 1,
-            "allow_archives": 1,
-            "multiple": 0
         },
         {
             "key": "field_5cdb4bda21e54",
@@ -260,27 +218,6 @@
             "new_lines": ""
         },
         {
-            "key": "field_5cd5c86fa1f6c",
-            "label": "Fulmer Award First Nations Art Nominate Link",
-            "name": "fulmer_award_first_nations_art_nominate_link",
-            "type": "page_link",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "form-link",
-                "id": ""
-            },
-            "post_type": [
-                "award"
-            ],
-            "taxonomy": "",
-            "allow_null": 1,
-            "allow_archives": 1,
-            "multiple": 0
-        },
-        {
             "key": "field_5cdb4c2621e55",
             "label": "Fulmer Award First Nations Button Label",
             "name": "fulmer_award_first_nations_button_label",
@@ -357,22 +294,6 @@
             "maxlength": "",
             "rows": "",
             "new_lines": ""
-        },
-        {
-            "key": "field_5cd5c8c0a1f70",
-            "label": "Community Award Nominate Link",
-            "name": "community_award_nominate_link",
-            "type": "url",
-            "instructions": "Copy and paste the desired URL.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "form-link",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
         },
         {
             "key": "field_5cdb4c3a21e56",
@@ -453,22 +374,6 @@
             "new_lines": ""
         },
         {
-            "key": "field_5fa30a8506e8e",
-            "label": "BCRA Link",
-            "name": "bcra_link",
-            "type": "url",
-            "instructions": "Copy and paste the desired URL.",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "form-link",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": ""
-        },
-        {
             "key": "field_5fa30a9006e8f",
             "label": "BCRA Label",
             "name": "bcra_label",
@@ -486,6 +391,117 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
+        },
+        {
+            "key": "field_6192cd4713b32",
+            "label": "Legacy \/ Not Used",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5fa30a8506e8e",
+            "label": "BCRA Link",
+            "name": "bcra_link",
+            "type": "url",
+            "instructions": "Copy and paste the desired URL.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "form-link",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5cd5c8c0a1f70",
+            "label": "Community Award Nominate Link",
+            "name": "community_award_nominate_link",
+            "type": "url",
+            "instructions": "Copy and paste the desired URL.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "form-link",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": ""
+        },
+        {
+            "key": "field_5cd5c86fa1f6c",
+            "label": "Fulmer Award First Nations Art Nominate Link",
+            "name": "fulmer_award_first_nations_art_nominate_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "form-link",
+                "id": ""
+            },
+            "post_type": [
+                "award"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_5cd5c820a1f68",
+            "label": "Carter Wosk Award Applied Art + Design Nominate Link",
+            "name": "carter_wosk_award_applied_art_design_nominate_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "form-link",
+                "id": ""
+            },
+            "post_type": [
+                "award"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "allow_archives": 1,
+            "multiple": 0
+        },
+        {
+            "key": "field_5cd5c7491d1e0",
+            "label": "Indigenous Business Award Nominate Link",
+            "name": "indigenous_business_award_nominate_link",
+            "type": "page_link",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "form-link",
+                "id": ""
+            },
+            "post_type": [
+                "award"
+            ],
+            "taxonomy": "",
+            "allow_null": 1,
+            "allow_archives": 1,
+            "multiple": 0
         }
     ],
     "location": [
@@ -515,5 +531,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1604520610
+    "show_in_rest": 0,
+    "modified": 1637010793
 }

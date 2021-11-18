@@ -122,7 +122,7 @@ add_action( 'widgets_init', 'bcaf_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bcaf_scripts() {
-	wp_enqueue_style( 'bcaf-style', get_stylesheet_uri(), array(), '1.12');
+	wp_enqueue_style( 'bcaf-style', get_stylesheet_uri(), array(), '1.131');
 	wp_enqueue_style( 'skeleton-grid', get_template_directory_uri() . '/skeleton.css' , array(), '1.5213');
 
 	wp_enqueue_script( 'bcaf-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

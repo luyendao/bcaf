@@ -1,10 +1,10 @@
 {
     "key": "group_6164a82550f32",
-    "title": "Global Settings",
+    "title": "Program Settings",
     "fields": [
         {
             "key": "field_6164ab4968c76",
-            "label": "Welcome to Global Settings",
+            "label": "Welcome to Program Settings",
             "name": "",
             "type": "message",
             "instructions": "",
@@ -97,6 +97,25 @@
             "placeholder": ""
         },
         {
+            "key": "field_6192cd8ec1e19",
+            "label": "COM Dates",
+            "name": "com_dates",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6164a8901299c",
             "label": "COM Link",
             "name": "com_link",
@@ -162,6 +181,25 @@
             "ajax": 1,
             "return_format": "value",
             "placeholder": ""
+        },
+        {
+            "key": "field_6192ce4ec1e1a",
+            "label": "AAD Dates",
+            "name": "aad_dates",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_6164aa7d5857c",
@@ -231,6 +269,25 @@
             "placeholder": ""
         },
         {
+            "key": "field_6192ce6fc1e1c",
+            "label": "FNA Dates",
+            "name": "fna_dates",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6164aa9a5857d",
             "label": "FNA Link",
             "name": "fna_link",
@@ -298,6 +355,25 @@
             "placeholder": ""
         },
         {
+            "key": "field_6192ce62c1e1b",
+            "label": "IBA Dates",
+            "name": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6164aab75857e",
             "label": "IBA Link",
             "name": "iba_link",
@@ -363,6 +439,25 @@
             "placeholder": ""
         },
         {
+            "key": "field_6192ce7dc1e1d",
+            "label": "REC Dates",
+            "name": "rec_dates",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_6164aacc5857f",
             "label": "REC Link",
             "name": "rec_link",
@@ -421,5 +516,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1636855840
+    "modified": 1637011085
 }

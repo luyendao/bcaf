@@ -1391,10 +1391,8 @@ ul.gform_fields li.gfield select {
 .award_categories-bc-indigenous-business-award .program-awardees-list li.rows {
 	clear: none;
 	float: left;
-	width: 50%;
+	width: 100%;
 	margin-bottom: 30px;
-
-
 }
 
 /* AOD type awardees */

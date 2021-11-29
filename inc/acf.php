@@ -23,23 +23,23 @@ function _social_media_icons() {
 $css = NULL;
 
 if ( !get_field('facebook_link')) {
-	$css = '.elementor-social-icon-facebook { display: none;}';
+	$css = '#awardee-social-icons .elementor-social-icon-facebook { display: none;}';
 }
 
 if ( !get_field('twitter_link')) {
-        $css .= '.elementor-social-icon-twitter { display: none;}';
+        $css .= '#awardee-social-icons .elementor-social-icon-twitter { display: none;}';
 }
 
 if ( !get_field('youtube_link')) {
-        $css .= '.elementor-social-icon-youtube { display: none;}';
+        $css .= '#awardee-social-icons .elementor-social-icon-youtube { display: none;}';
 }
 
 if ( !get_field('linkedin_link')) {
-        $css .= '.elementor-social-icon-linkedin { display: none;}';
+        $css .= '#awardee-social-icons .elementor-social-icon-linkedin { display: none;}';
 }
 
 if ( !get_field('instagram_link')) {
-        $css .= '.elementor-social-icon-instagram { display: none;}';
+        $css .= '#awardee-social-icons .elementor-social-icon-instagram { display: none;}';
 }
 
 if ( !get_field('youtube_video_url') && !get_field('youtube_video_url_2')) {

@@ -121,7 +121,7 @@ function _home_features(){
 	} elseif ($current == 'option3') {
 	// Two + 3 Blogs
 		echo do_shortcode('[elementor-template id="12754"]');
-		echo do_shortcode('[elementor-template id="12760"]');
+		echo do_shortcode('[elementor-template id="12792"]');
 
 	} elseif ($current == 'option1') {
 	// Default 6 Blogs
@@ -129,7 +129,7 @@ function _home_features(){
 	// Video + 3 Blocks
 	} elseif ( $current == 'option4') {
 		echo do_shortcode('[elementor-template id="12743"]');
-		echo do_shortcode('[elementor-template id="12760"]');
+		echo do_shortcode('[elementor-template id="12792"]');
 	} elseif ( $current == 'option5') {
                 echo do_shortcode('[elementor-template id="12760"]');
         }	

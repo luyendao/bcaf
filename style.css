@@ -1543,13 +1543,12 @@ background: #fff !important;
 }
 
 @media (min-width: 1024px) {
-
-	/* Block 1 */
-	.elementor-12841 .elementor-element.elementor-element-222f5a74 {
-		width: 770px !important;
-	}
+        /* Block 1 */
+        .elementor-element.elementor-element-1ae5983d {
+                width: 770px !important;
+        }
         /* Block 2 */
-	.elementor-element-2ac1c2b3 { width: 370px !important; }
+        .elementor-element-3caf18be { width: 370px !important; }
 }
 
 @media (max-width: 767px) {

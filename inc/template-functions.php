@@ -17,6 +17,23 @@ function bcaf_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
+	if ( is_singular('award')) {
+
+		$terms_award_year = get_the_terms( get_the_ID(),'award_year' ); 
+        
+        foreach($terms_award_year as $term) {
+          $term_year_slug = $term->slug;
+        }		
+
+        $award_year_state = 'legacy';
+
+        if ($term_year_slug >= 2019) {
+        	$award_year_state = 'not-legacy';
+        }
+
+
+		$classes[]= 'award-year-' . $award_year_state;
+	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {

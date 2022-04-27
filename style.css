@@ -1158,6 +1158,42 @@ line-height: 24px;
 }
 
 
+/* PROGRAM PAGE */
+
+.single-award .nominate-form-instructions {
+margin-top: 5px !important;
+}
+
+/* SUPPORT BAR */
+.single-award .award_categories-fulmer-award-in-first-nations-art .program-support-bar { background-color: #A25855 !important; }
+.single-award .award_categories-bc-achievement-community-award .program-support-bar {background-color: #6166AF !important; }
+.single-award .award_categories-bc-indigenous-business-award .program-support-bar { background-color: #DF8627 !important; }
+.single-award .award_categories-carter-wosk-award-in-applied-art-and-design .program-support-bar{ }
+.single-award .award_categories-reconciliation-award .program-support-bar { background-color: #E7B444 !important; }
+
+/* BODY COPY BG */
+.single-award .award_categories-fulmer-award-in-first-nations-art .program-body-copy {
+	background-color:  #dac8c7 !important;
+}
+
+.single-award .award_categories-bc-achievement-community-award .program-body-copy {
+	background-color:  #6065af2b !important;
+}
+
+.single-award .award_categories-reconciliation-award  .program-body-copy { 
+	background-color:  #f0ba2f78 !important;
+}
+
+.single-award .award_categories-bc-indigenous-business-award .program-body-copy {
+	background-color:  #e4d4c4 !important;
+}
+
+.single-award .award_categories-carter-wosk-award-in-applied-art-and-design .program-body-copy { 
+	background-color:  #46683733 !important;
+}
+
+
+
 /* AWARDEE POST BADGE */
 .awardee-badge .elementor-widget-container {
 	color: #fff !important;
@@ -1173,6 +1209,9 @@ line-height: 24px;
 .award_categories-fulmer-award-in-first-nations-art .elementor-icon i:before { color: #a25855 !important; }
 .award_categories-reconciliation-award .elementor-icon i:before { color: #E7B444 !important; }
 */
+
+
+
 
 /* Taxonomy -> Sub-Menu, and Ahref */
 .award_categories-bc-achievement-community-award #award-sub-menu-overlay,
@@ -1362,6 +1401,7 @@ ul.gform_fields li.gfield select {
 	font-size: 18px;
 	margin-top: 30px;
 	font-family: lato;
+	font-weight:  400;
 	color: #000;
 }
 
@@ -1418,6 +1458,90 @@ li.awardee-aod  .columns.eight {
 	list-style-type: none;
 	min-height: 135px;
 	margin-bottom: 15px;
+}
+
+
+/* Award Template Typography */
+
+.single-award h2.typeface2 {
+	font-weight:  300;
+	color:  #000;
+	text-transform:  uppercase;
+	text-align:  left;
+}
+
+/* Awardee card - excluding IBA */
+.single-award .awardee {
+	min-height: 450px; 
+	margin-left: 0 !important;
+	margin-bottom:  30px;
+	margin-right: 15px;
+}
+
+.single-award .program-body-copy iframe {
+	max-width:  1080px;
+}
+
+/* Awards year 2019 and before images were less tall */
+.single-award.award-year-legacy .awardee {
+	min-height: 300px; 	
+}
+
+.single-award.award-year-legacy .awardee img.awardee-image-placeholder {
+	max-height:  175px;
+}
+
+.single-award.award-year-legacy .awardee img {
+	max-height:  275px;
+	min-height:  175px;
+}
+
+
+
+.single-award .awardee .status {
+	font-weight:  400;
+	font-family:  Raleway, Lato;
+	color:  #156487;
+}
+
+/* Awardees - IBA Loop */
+
+.awardee-iba-card {
+	padding: 30px 15px 30px 30px
+}
+
+.awardee-iba {
+	margin-bottom:  60px;
+	min-height:  350px;
+	/*box-shadow:  5px 1px 15px 0px #d5d5d56b;*/
+    margin-right: 15px;
+}
+
+.awardee-iba img {
+	margin-left:  -30px;
+}
+
+.awardee-iba a.imageref {
+	min-height:  300px;
+}
+
+.awardee-iba h2 {
+	font-size:  18px;
+	font-weight:  400;
+	color:  #DF8627;
+}
+
+
+.awardee-iba h2 span {
+}
+
+.awardee-iba h3 {
+	min-height:  55px;
+}
+
+
+.awardee-iba.columns {
+	margin-left:  0 !important;
 }
 
 /* Sponsors Styles */

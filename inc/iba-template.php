@@ -34,13 +34,11 @@ endif;
 
 return sprintf('
 
-<li class="rows awardee-iba %s">
-	<div class="columns %s"><a href="%s" title="%s">%s</a></div>
-		<div class="columns seven"><a href="%s" title="%s">%s &raquo;</a>
+	<div class="awardee-iba-card">
+	<a href="%s" title="%s" class="imageref">%s</a>
+		<a href="%s" title="%s"><h3 style="font-size: 18px; color:#000;">%s</h3></a>
+			<h2 class="iba-award-header">%s</h2>
 			<div class="awardee-city">%s</div>
-			<div class="awardee-status"><em>%s</em>
-		</div>
+			<div class="awardee-status"><em>%s</em></div>
 	</div>
-</li>', 
-
-$column_class,$column_thumbnail, $link, $title, $thumbnail, $link, $title, $title, $city, $status_label );
+		',  $link, $title, $thumbnail, $link, $title, $title, $header, $city, $status_label );

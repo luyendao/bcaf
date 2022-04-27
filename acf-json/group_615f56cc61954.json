@@ -428,7 +428,6 @@
         "slug",
         "author",
         "format",
-        "page_attributes",
         "featured_image",
         "categories",
         "tags",
@@ -436,6 +435,6 @@
     ],
     "active": true,
     "description": "",
-    "show_in_rest": false,
-    "modified": 1636855708
+    "show_in_rest": 0,
+    "modified": 1642438759
 }

@@ -170,28 +170,28 @@ function _awardee_aod($atts) {
 
 
         // Default recipient title
-        $title = "Recipient";
+        //$title = "Recipient";
 
-        if (get_field('custom_recipient_title') && $current_term_id !== 5) {
-            $title = get_field('custom_recipient_title');
-        }
+        //if (get_field('custom_recipient_title') && $current_term_id !== 5) {
+        //    $title = get_field('custom_recipient_title');
+        //}
 
         // Get current term ID
         $term_list = wp_get_post_terms( get_the_ID(), 'award_categories', array( 'fields' => 'ids' ) );
         $current_term_id = $term_list[0];
 
 
-        if (get_field('award_of_distinction') == 1) {
-            $title = sprintf('<div class="aod awardee-meta-color-fill elementor-post-info__terms-list-item">Award of Distinction</div>');
-        }
+        //if (get_field('award_of_distinction') == 1) {
+        //    $title = sprintf('<div class="aod awardee-meta-color-fill elementor-post-info__terms-list-item">Award of Distinction</div>');
+        //}
 
-        if (get_field('crabtree_mclennan_emerging_artist_award') == 1) {
-            $title = sprintf('<div class="crabtree">Crabtree McLennan Emerging Artist</div>');
-	}             
+        //if (get_field('crabtree_mclennan_emerging_artist_award') == 1) {
+        //    $title = sprintf('<div class="crabtree">Crabtree McLennan Emerging Artist</div>');
+	   //}             
 
-        if (get_field('judson_beaumont_emerging_artist', $id) === true) {
-            $title = sprintf('<em>%s</em>', 'Judson Beaumont Emerging Artist');
-        }
+        //if (get_field('judson_beaumont_emerging_artist', $id) === true) {
+         //   $title = sprintf('<em>%s</em>', 'Judson Beaumont Emerging Artist');
+        //}
 
         // IBA ONLY
 
@@ -360,8 +360,8 @@ if ( get_field('display_sponsors')) {
         }
         $supporting_orgs = "Organizations";
         $sponsor_header = "Sponsors";
-	 $presentation_header = "Presentation Sponsor";
-	$strategic_header = "Strategic Partners";
+	    $presentation_header = "Presentation Sponsor";
+	    $strategic_header = "Strategic Partners";
         $event_header = "Event Partners";
         $donor_header = "Donors";
         $supporting_header = "Organizations";
@@ -390,7 +390,7 @@ if ( get_field('display_sponsors')) {
         }  
 
 
-    $out = sprintf('<div class="row sponsors" style="margin-top: 30px;"><h2 style="color:#000;">%s</h2><hr style="background-color:#00000040; margin-bottom: 15px;" /></div>', $sponsors_section_header);
+    $out = sprintf('<div class="row sponsors" style="margin-top: 30px;"><h2 class="typeface2">%s</h2></div>', $sponsors_section_header);
 
     $out .= $govt_header;
 
@@ -415,7 +415,7 @@ if ( get_field('display_sponsors')) {
     
         endforeach;  
 
-         $out .= sprintf('<div class="row sponsors supporting-organizations"><h4>%s</h4><hr style="background-color:#00000040; margin-bottom: 15px;" />%s</div>', $supporting_orgs, $supporting_markup);
+         $out .= sprintf('<div class="row sponsors supporting-organizations"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $supporting_orgs, $supporting_markup);
 
         
     }  
@@ -443,7 +443,7 @@ if ( get_field('display_sponsors')) {
 
 
         // Output entire markup
-        $out .= sprintf('<div class="row sponsors partner-sponsor"><h4>%s</h4><hr style="background-color:#00000040; margin-bottom: 15px;" />%s</div>', $sponsor_header, $sponsors_markup);
+        $out .= sprintf('<div class="row sponsors partner-sponsor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $sponsor_header, $sponsors_markup);
     }
 
 
@@ -474,7 +474,7 @@ if ( get_field('display_sponsors')) {
 
 
         // Output entire markup
-        $out .= sprintf('<div class="row sponsors presentation-sponsor"><h4>%s</h4><hr style="background-color:#00000040; margin-bottom: 15px;" />%s</div>', $presentation_header, $presentation_sponsor_markup);
+        $out .= sprintf('<div class="row sponsors presentation-sponsor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $presentation_header, $presentation_sponsor_markup);
 
     }
 
@@ -500,7 +500,7 @@ if ( get_field('display_sponsors')) {
     
         endforeach;  
 
-        $out .= sprintf('<div class="row sponsors partner-strategic-sponsor"><h4>%s</h4><hr style="background-color:#00000040; margin-bottom: 15px;" />%s</div>', $strategic_header, $strategic_partners_markup);
+        $out .= sprintf('<div class="row sponsors partner-strategic-sponsor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $strategic_header, $strategic_partners_markup);
 
     }
 
@@ -524,7 +524,7 @@ if ( get_field('display_sponsors')) {
     
         endforeach;  
 
-         $out .= sprintf('<div class="row sponsors partner-event"><h4>%s</h4><hr style="background-color:#00000040; margin-bottom: 15px;" />%s</div>', $event_header, $event_partners_markup);
+         $out .= sprintf('<div class="row sponsors partner-event"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $event_header, $event_partners_markup);
 
 
     }
@@ -549,18 +549,11 @@ if ( get_field('display_sponsors')) {
     
         endforeach;  
 
-         $out .= sprintf('<div class="row sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000040; margin-bottom: 15px;" />%s</div>', $donor_header, $donors_markup);
+         $out .= sprintf('<div class="row sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $donor_header, $donors_markup);
 
         
     }        
 
-
-  
-
-       // if ( get_the_ID() == 6177 ) {
-         //   var_dump("This is: 6177");
-          //  var_dump( $out);
-        //}   
 
     return $out;
     
@@ -574,18 +567,21 @@ function _awardee_thumbnail($id, $term_cat_slug) {
 
     if ( get_the_post_thumbnail($id)) {
 
+        $size = 'large';
+
+        /*
         if (get_field('award_of_distinction', $id) || $is_aod) {
-            $size = 'medium';
+            $size = 'large';
         } else {
             $size = 'thumbnail';
-        }
+        }*/
 
         $thumbnail = get_the_post_thumbnail($id , $size);     
     
 
     }  else {
         // Concantenate a bunch of things to pull placeholder based on taxonomy
-        $thumbnail = sprintf('<img src="%s/images/awardee-placeholder-%s.jpg" alt="Placeholder" />', get_template_directory_uri(), $term_cat_slug);
+        $thumbnail = sprintf('<img src="%s/images/awardee-placeholder-%s.jpg" class="awardee-image-placeholder" alt="Placeholder" />', get_template_directory_uri(), $term_cat_slug);
     }
 
     return $thumbnail;
@@ -670,7 +666,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp9);
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp9);
 
                     endif; 
 
@@ -681,12 +677,12 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $business_oty_two_person ):
                         // Loop ACF relationship and return post ID
                         foreach ( $business_oty_two_person as $aid ):
-                             $header = 'Business of the Year – one to two person enterprise';
+                             $header = 'Business of the Year <span>one to two person enterprise</span>';
                              $temp4.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
 
                        
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp4);
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>',$temp4);
 
                     endif;                    
 
@@ -696,12 +692,12 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $business_oty_three_ten_person ):
                         // Loop ACF relationship and return post ID
                         foreach ( $business_oty_three_ten_person as $aid ):
-                             $header = 'Business of the Year – three to 10 person enterprise';
+                             $header = 'Business of the Year <span>three to 10 person enterprise</span>';
                              $temp5.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
 
                        
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp5);
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp5);
 
                     endif;    
 
@@ -711,12 +707,12 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $business_oty_ten_plus_person ):
                         // Loop ACF relationship and return post ID
                         foreach ( $business_oty_ten_plus_person as $aid ):
-                             $header = 'Business of the Year – 10+ person enterprise';
+                             $header = 'Business of the Year <span>10+ person enterprise</span>';
                              $temp6.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
 
                        
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp6);
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp6);
 
                     endif; 
    
@@ -725,12 +721,12 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $business_oty_eleven_plus_person ):
                         // Loop ACF relationship and return post ID
                         foreach ( $business_oty_eleven_plus_person as $aid ):
-                             $header = 'Business of the Year – 11+ person enterprise';
+                             $header = 'Business of the Year <span>11+ person enterprise</span>';
                              $temp7.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
 
                        
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp7);  
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp7);
 
                     endif; 
 
@@ -745,7 +741,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp8);
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp8);
 
                     endif; 
 
@@ -757,12 +753,12 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $coboty_one_entity ):
                         // Loop ACF relationship and return post ID
                         foreach ( $coboty_one_entity as $aid ):
-                             $header = 'Community-Owned Business of the Year – one entity';
+                             $header = 'Community-Owned Business of the Year <span>one entity</span>';
                              $temp10.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
 
                        
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp10);
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp10);
 
                     endif; 
 
@@ -772,12 +768,12 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $coboty_two_more_entity ):
                         // Loop ACF relationship and return post ID
                         foreach ( $coboty_two_more_entity as $aid ):
-                             $header = 'Community-Owned Business of the Year – two or more entities';
+                             $header = 'Community-Owned Business of the Year <span>two or more entities</span>';
                              $temp11.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
 
                        
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp11);
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp11);
 
                     endif; 
 
@@ -790,12 +786,12 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $abpy ):
                         // Loop ACF relationship and return post ID
                         foreach ( $abpy as $aid ):
-                            $header = 'Aboriginal-Aboriginal Business Partnership of the Year';
+                            $header = 'Aboriginal-Aboriginal Business <span>Partnership of the Year</span>';
                             $temp1 .= include(locate_template('inc/iba-template.php', false, false));
 
                         endforeach;
 
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp1);
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp1);
 
                     endif;
 
@@ -805,11 +801,11 @@ function _awardees_by_taxonomy( $atts ){
                     if ( $aibpy ):
                         // Loop ACF relationship and return post ID
                         foreach ( $aibpy as $aid ):
-                             $header = 'Aboriginal-Industry Business Partnership of the Year';
+                             $header = 'Aboriginal-Industry Business <span>Partnership of the Year</span>';
                              $temp2.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
                        
-                         $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp2);
+                         $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp2);
 
                     endif;                    
 
@@ -823,7 +819,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                         $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp3);
+                         $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp3);
 
                     endif;                    
 
@@ -838,7 +834,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $temp12);
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp12);
 
                     endif; 
 
@@ -854,13 +850,13 @@ function _awardees_by_taxonomy( $atts ){
 
                         endforeach;
 
-                        $out .= sprintf('<h3 class="iba-award-header">%s</h3>%s', $header, $aod_iba);
+                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $aod_iba);
 
                     endif;
 
 
          // Return final markup for IBA Awardees
-         return '<div class="program-awardees-list" style="margin-bottom:30px;float:left;"><ul>' . $out . '</ul></div>';                    
+         return '<div class="program-awardees-list" style="margin-bottom:30px;float:left;">' . $out . '</div>';                    
 
 	} // End display_awardees ACF boolean if statement
 
@@ -876,7 +872,7 @@ function _awardees_by_taxonomy( $atts ){
 
 	// Check boolean display awardees or not
 	if ( get_field('display_awardees') == 1) {
-	     $awardees_header = sprintf('<h3>%s Awardees:</h3>', $term_year_name);
+	     $awardees_header = sprintf('<h2 class="typeface2">%s AWARDEES</h2>', $term_year_name);
  
 	    // Get all awardees 
             $value = get_posts(array(
@@ -914,6 +910,7 @@ function _awardees_by_taxonomy( $atts ){
                 $city = get_field('city', $id);
                 $status = '';
 
+                /* Removed 04/22
                 if (get_field('crabtree_mclennan_emerging_artist_award', $id) === true) {
                     $status = sprintf('<em>%s</em>', 'Crabtree McLennan Emerging Artist');
                 }                
@@ -921,6 +918,7 @@ function _awardees_by_taxonomy( $atts ){
                 if (get_field('judson_beaumont_emerging_artist', $id) === true) {
                     $status = sprintf('<em>%s</em>', 'Judson Beaumont Emerging Artist');
                 }
+                */
 
 
 
@@ -963,7 +961,7 @@ function _awardees_by_taxonomy( $atts ){
                     
                     // ***************
                     // AOD AWARDEE
-
+                    /*
                     if ( get_field('award_of_distinction', $id)) {
 
                         $aod_header = sprintf('<h3>%s %s:</h3>', $term_year_name, $award_recipient_header);
@@ -973,32 +971,42 @@ function _awardees_by_taxonomy( $atts ){
                         $aod_awardees .= sprintf('<li class="rows awardee-aod"><div class="columns three"><a href="%s" title="%s">%s</a></div><div class="columns eight"><a href="%s" title="%s">%s &raquo;</a><div class="awardee-city">%s</div><p>%s</p></div></li>', $link, $title, $thumbnail, $link, $title, $title, $city, $bio);
 
                     }
+                    */
+
                     // ***************
                     // ALL AWARDEES
                     
-                    if ( !get_field('award_of_distinction', $id)) {
+                    $aod_label = NULL;
+                    //if ( get_field('award_of_distinction', $id)) {
+                    //    $aod_label = sprintf('Award of Distinction');
+                    //}
 
                         // If COM set second column class
+                    /*
                         if (  $term_cat_id === 2 ) { 
                             $column_class = 'four';
                         } else {
                             $column_class = 'two';
                         }   
-                        $awardees  .= sprintf('<li class="rows awardee"><div class="columns %s"><a href="%s" title="%s">%s</a></div><div class="columns eight"><a href="%s" title="%s">%s &raquo;</a><div class="awardee-city">%s</div>%s</div></li>', $column_class, $link, $title, $thumbnail, $link, $title, $title, $city, $status);
-                    }
+                    */
+                        $awardees  .= sprintf('
+                            <div class="columns three awardee">
+                            <a href="%s">%s<h3 style="margin-bottom: 0; margin-top: 15px;">%s</h3><div class="status">%s%s</div></a>
+                            </div>', $link,$thumbnail,$title, $status,$aod_label);
+                    //}
 
             } // End foreach loop and return markup
 
 
             // Markup for AOD Awardees
-            $aod_awardees_out = sprintf('<div id="aod-wrapper">%s<div class="program-awardees-list"><ul>%s</ul></div></div>', $aod_header, $aod_awardees);
+            //$aod_awardees_out = sprintf('<div id="aod-wrapper">%s<div class="program-awardees-list"><ul>%s</ul></div></div>', $aod_header, $aod_awardees);
 
-            $awardees_out =  sprintf('<div id="awardees-wrapper">%s<div class="program-awardees-list"><ul>%s</ul></div></div>', $awardees_header, $awardees);
+            $awardees_out =  sprintf('<div id="awardees-wrapper">%s<div class="program-awardees-list"><div class="rows">%s</div></div></div>', $awardees_header, $awardees);
 
 
             // Output final markup
 
-            $out = sprintf('%s%s', $aod_awardees_out,  $awardees_out);
+            $out = sprintf('%s', $awardees_out);
 
 
             return $out; 

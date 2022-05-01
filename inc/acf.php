@@ -855,8 +855,10 @@ function _awardees_by_taxonomy( $atts ){
                     endif;
 
 
+
          // Return final markup for IBA Awardees
-         return '<div class="program-awardees-list" style="margin-bottom:30px;float:left;">' . $out . '</div>';                    
+         $html = sprintf('<h2 class="typeface2">%s AWARDEES</h2><div class="program-awardees-list" style="margin-bottom:30px;float:left;">%s</div>', $term_year_name, $out);                    
+	 return $html;
 
 	} // End display_awardees ACF boolean if statement
 

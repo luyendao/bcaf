@@ -7,7 +7,7 @@ $link = get_the_permalink($aid);
 $city = get_field('city', $aid);
 $status_label = '';
 
-// If AOD 
+/*
 if ( get_field('award_of_distinction', $aid)):
     $column_thumbnail = 'three';
     $column_class = "awardee-aod";
@@ -15,7 +15,7 @@ else:
     $column_thumbnail = 'four';	
     $column_class ='';
 endif;
-
+ */
 
 // If outstanding business achievement is TRUE
 if ( get_field('status', $aid) == 'Outstanding Business Achiever' && !get_field('award_of_distinction', $aid)):
@@ -36,9 +36,8 @@ return sprintf('
 
 	<div class="awardee-iba-card">
 	<a href="%s" title="%s" class="imageref">%s</a>
-		<a href="%s" title="%s"><h3 style="font-size: 18px; color:#000;">%s</h3></a>
+		<a href="%s" title="%s"><h3 class="awardee-title">%s</h3></a>
 			<h2 class="iba-award-header">%s</h2>
-			<div class="awardee-city">%s</div>
 			<div class="awardee-status"><em>%s</em></div>
 	</div>
-		',  $link, $title, $thumbnail, $link, $title, $title, $header, $city, $status_label );
+		',  $link, $title, $thumbnail, $link, $title, $title, $header, $status_label );

@@ -1514,7 +1514,7 @@ li.awardee-aod  .columns.eight {
 	margin-bottom:  60px;
 	min-height:  350px;
 	/*box-shadow:  5px 1px 15px 0px #d5d5d56b;*/
-    margin-right: 15px;
+    	margin-right: 15px;
 }
 
 .awardee-iba img {
@@ -1531,14 +1531,11 @@ li.awardee-aod  .columns.eight {
 	color:  #DF8627;
 }
 
-
-.awardee-iba h2 span {
-}
-
-.awardee-iba h3 {
-	min-height:  55px;
-}
-
+.awardee-iba-card .awardee-title {
+	font-size: 18px; 
+	color:#000;
+	font-weight: 400;
+}		
 
 .awardee-iba.columns {
 	margin-left:  0 !important;

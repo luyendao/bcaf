@@ -20,7 +20,7 @@ endif;
 // If outstanding business achievement is TRUE
 if ( get_field('status', $aid) == 'Outstanding Business Achiever' && !get_field('award_of_distinction', $aid)):
     
-    $status_label = 'Outstanding Business Achievement';
+    //$status_label = 'Outstanding Business Achievement';
 
 elseif(get_field('award_of_distinction', $aid)):
 

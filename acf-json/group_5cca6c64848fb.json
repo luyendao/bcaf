@@ -38,6 +38,30 @@
             "delay": 0
         },
         {
+            "key": "field_626f551b7f348",
+            "label": "Hero Image Mobile",
+            "name": "hero_image_mobile",
+            "type": "image",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "return_format": "array",
+            "preview_size": "medium",
+            "library": "all",
+            "min_width": "",
+            "min_height": "",
+            "min_size": "",
+            "max_width": "",
+            "max_height": "",
+            "max_size": "",
+            "mime_types": ""
+        },
+        {
             "key": "field_5e89252c8797d",
             "label": "Hero Image Caption \/ Additions",
             "name": "hero_image_caption",
@@ -107,9 +131,9 @@
                 "class": "",
                 "id": ""
             },
-            "default_value": "",
+            "default_value": "Make the title of the main body (i.e. Honouring excellence and inspiring achievement in community service\") an H2 header.",
             "tabs": "all",
-            "toolbar": "basic",
+            "toolbar": "full",
             "media_upload": 1,
             "delay": 0
         },
@@ -421,7 +445,7 @@
         },
         {
             "key": "field_5d6db7d8adb15",
-            "label": "Engagement",
+            "label": "Award of Distinction",
             "name": "engagement",
             "type": "wysiwyg",
             "instructions": "",
@@ -644,44 +668,6 @@
             "ui_off_text": ""
         },
         {
-            "key": "field_5f0f44c2cec0c",
-            "label": "Show Awardees Banner?",
-            "name": "show_awardees_honoured_banner",
-            "type": "true_false",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "message": "",
-            "default_value": 1,
-            "ui": 1,
-            "ui_on_text": "",
-            "ui_off_text": ""
-        },
-        {
-            "key": "field_5f0f44f4cec0d",
-            "label": "Awardees Honoured Banner Label",
-            "name": "awardees_honoured_banner_copy",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5ccb47d7e0252",
             "label": "Youtube Video Link",
             "name": "youtube_video",
@@ -780,6 +766,60 @@
             "ui": 1,
             "ui_on_text": "",
             "ui_off_text": ""
+        },
+        {
+            "key": "field_626f52ba43f90",
+            "label": "Legacy Fields To be Deleted",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5f0f44c2cec0c",
+            "label": "Show Awardees Banner?",
+            "name": "show_awardees_honoured_banner",
+            "type": "true_false",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        },
+        {
+            "key": "field_5f0f44f4cec0d",
+            "label": "Awardees Honoured Banner Label",
+            "name": "awardees_honoured_banner_copy",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -809,5 +849,6 @@
     ],
     "active": true,
     "description": "",
-    "modified": 1621287536
+    "show_in_rest": 0,
+    "modified": 1651463477
 }

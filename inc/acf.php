@@ -170,30 +170,20 @@ function _awardee_aod($atts) {
 
 
         // Default recipient title
-        //$title = "Recipient";
+        $title = "Recipient";
 
         //if (get_field('custom_recipient_title') && $current_term_id !== 5) {
         //    $title = get_field('custom_recipient_title');
         //}
 
+
         // Get current term ID
         $term_list = wp_get_post_terms( get_the_ID(), 'award_categories', array( 'fields' => 'ids' ) );
         $current_term_id = $term_list[0];
 
+	
 
-        //if (get_field('award_of_distinction') == 1) {
-        //    $title = sprintf('<div class="aod awardee-meta-color-fill elementor-post-info__terms-list-item">Award of Distinction</div>');
-        //}
-
-        //if (get_field('crabtree_mclennan_emerging_artist_award') == 1) {
-        //    $title = sprintf('<div class="crabtree">Crabtree McLennan Emerging Artist</div>');
-	   //}             
-
-        //if (get_field('judson_beaumont_emerging_artist', $id) === true) {
-         //   $title = sprintf('<em>%s</em>', 'Judson Beaumont Emerging Artist');
-        //}
-
-        // IBA ONLY
+	// IBA ONLY
 
         if ( $current_term_id == 5 ) {
 
@@ -220,10 +210,6 @@ function _awardee_aod($atts) {
 
         }
 
-
-
-
-        //var_dump(get_field('multiple_status'));
 
         $out = sprintf('%s', $title);
 

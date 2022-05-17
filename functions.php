@@ -163,6 +163,12 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/acf.php';
 
+/**
+ * Aq_resizer Related Functions
+ */
+require get_template_directory() . '/inc/aq_resizer.php';
+
+
 
 /**
  * Post Schemas 

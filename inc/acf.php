@@ -551,26 +551,16 @@ if ( get_field('display_sponsors')) {
 
 function _awardee_thumbnail($id, $term_cat_slug) {
 
-    if ( get_the_post_thumbnail($id)) {
+$featured_img_url = get_the_post_thumbnail_url($id);
 
-        $size = 'large';
+if($featured_img_url) {
+        $thumbnail = aq_resize( $featured_img_url, 240, 240, true, true, true);
+        $thumbnail_tag = sprintf('<img src="%s" alt="Image" />', $thumbnail);
+} else {
+	$thumbnail_tag = sprintf('<img src="%s/images/awardee-placeholder-%s.jpg" class="awardee-image-placeholder" alt="Placeholder" />', get_template_directory_uri(), $term_cat_slug);
+}
 
-        /*
-        if (get_field('award_of_distinction', $id) || $is_aod) {
-            $size = 'large';
-        } else {
-            $size = 'thumbnail';
-        }*/
-
-        $thumbnail = get_the_post_thumbnail($id , $size);     
-    
-
-    }  else {
-        // Concantenate a bunch of things to pull placeholder based on taxonomy
-        $thumbnail = sprintf('<img src="%s/images/awardee-placeholder-%s.jpg" class="awardee-image-placeholder" alt="Placeholder" />', get_template_directory_uri(), $term_cat_slug);
-    }
-
-    return $thumbnail;
+    return $thumbnail_tag;
 }
 
 
@@ -652,7 +642,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp9);
+                        $out .= sprintf('%s', $temp9);
 
                     endif; 
 
@@ -668,7 +658,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>',$temp4);
+                        $out .= sprintf('%s',$temp4);
 
                     endif;                    
 
@@ -683,7 +673,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp5);
+                        $out .= sprintf('%s', $temp5);
 
                     endif;    
 
@@ -698,7 +688,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp6);
+                        $out .= sprintf('%s', $temp6);
 
                     endif; 
    
@@ -712,7 +702,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp7);
+                        $out .= sprintf('%s', $temp7);
 
                     endif; 
 
@@ -727,7 +717,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp8);
+                        $out .= sprintf('%s', $temp8);
 
                     endif; 
 
@@ -744,7 +734,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp10);
+                        $out .= sprintf('%s', $temp10);
 
                     endif; 
 
@@ -759,7 +749,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp11);
+                        $out .= sprintf('%s', $temp11);
 
                     endif; 
 
@@ -777,7 +767,7 @@ function _awardees_by_taxonomy( $atts ){
 
                         endforeach;
 
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp1);
+                        $out .= sprintf('%s', $temp1);
 
                     endif;
 
@@ -791,7 +781,7 @@ function _awardees_by_taxonomy( $atts ){
                              $temp2.= include(locate_template('inc/iba-template.php', false, false));
                         endforeach;
                        
-                         $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp2);
+                         $out .= sprintf('%s', $temp2);
 
                     endif;                    
 
@@ -805,7 +795,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                         $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp3);
+                         $out .= sprintf('%s', $temp3);
 
                     endif;                    
 
@@ -820,7 +810,7 @@ function _awardees_by_taxonomy( $atts ){
                         endforeach;
 
                        
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $temp12);
+                        $out .= sprintf('%s', $temp12);
 
                     endif; 
 
@@ -836,7 +826,7 @@ function _awardees_by_taxonomy( $atts ){
 
                         endforeach;
 
-                        $out .= sprintf('<div class="columns four awardee-iba">%s</div>', $aod_iba);
+                        $out .= sprintf('%s', $aod_iba);
 
                     endif;
 

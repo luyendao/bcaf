@@ -1477,7 +1477,7 @@ li.awardee-aod  .columns.eight {
 
 /* Awardee card - excluding IBA */
 .single-award .awardee {
-	min-height: auto; 
+	min-height: 350px; 
 	margin-left: 0 !important;
 	margin-bottom:  30px;
 	margin-right: 15px;
@@ -1487,7 +1487,7 @@ li.awardee-aod  .columns.eight {
 	max-width:  1080px;
 }
 
-/* Awards year 2019 and before images were less tall */
+/* Awards year 2019 and before images were less tall 
 .single-award.award-year-legacy .awardee {
 	min-height: 300px; 	
 }
@@ -1500,7 +1500,7 @@ li.awardee-aod  .columns.eight {
 	max-height:  275px;
 	min-height:  175px;
 }
-
+*/
 
 
 .single-award .awardee .status {
@@ -1513,12 +1513,13 @@ li.awardee-aod  .columns.eight {
 
 .awardee-iba-card {
 	min-height: 450px;
-	padding: 30px 15px 30px 30px
+	padding: 15px 15px 15px 0;
 }
 
-.awardee-iba {
-	/*box-shadow:  5px 1px 15px 0px #d5d5d56b;*/
-    	margin-right: 15px;
+.awardee-iba-card .awardee-placeholder {
+	background-color: #DF8627;
+	width: 240px;
+	height: 240px;
 }
 
 @media only screen and (min-width: 768px) {
@@ -1526,23 +1527,17 @@ li.awardee-aod  .columns.eight {
         	min-height:  525px;
         	margin-right: 15px;
 	}	
-	
 }
 
-
-
-
-.awardee-iba img {
-}
-
-.awardee-iba a.imageref {
-	min-height:  300px;
-}
-
-.awardee-iba h2 {
+.awardee-iba-card h2 {
 	font-size:  18px;
 	font-weight:  400;
 	color:  #DF8627;
+	max-width: 260px;
+}
+
+.awardee-iba-card h3 {
+	max-width: 260px;
 }
 
 .awardee-iba-card .awardee-title {
@@ -1551,7 +1546,7 @@ li.awardee-aod  .columns.eight {
 	font-weight: 400;
 }		
 
-.awardee-iba.columns {
+.awardee-iba-card.columns {
 	margin-left:  0 !important;
 }
 

@@ -17,7 +17,7 @@ add_shortcode( 'awardee_profile_awards','_awardee_profile_awards');
 add_shortcode( 'social_media_icons','_social_media_icons');
 
 
-// Elementor Icons based on ACF Fields
+// Awardee Profile: Elementor Icons based on ACF Fields
 function _social_media_icons() {
 
 $css = NULL;
@@ -55,7 +55,7 @@ return $css_out;
 
 
 
-// Display award logo 
+// Awardee Profile: Display award logo 
 
 function _awardee_profile_awards() {
 
@@ -346,8 +346,8 @@ if ( get_field('display_sponsors')) {
         }
         $supporting_orgs = "Organizations";
         $sponsor_header = "Sponsors";
-	    $presentation_header = "Presentation Sponsor";
-	    $strategic_header = "Strategic Partners";
+	$presentation_header = "Presentation Sponsor";
+	$strategic_header = "Strategic Partners";
         $event_header = "Event Partners";
         $donor_header = "Donors";
         $supporting_header = "Organizations";

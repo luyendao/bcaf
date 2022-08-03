@@ -81,6 +81,23 @@
             "delay": 0
         },
         {
+            "key": "field_629e7f300af92",
+            "label": "Hero Image Caption \/ Additions Text Color",
+            "name": "hero_image_caption__additions_text_color",
+            "type": "color_picker",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "enable_opacity": 0,
+            "return_format": "string"
+        },
+        {
             "key": "field_5d856c6399dea",
             "label": "Hero Call to Action Button Label",
             "name": "hero_cta_button_label",
@@ -850,5 +867,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1651463477
+    "modified": 1654554447
 }

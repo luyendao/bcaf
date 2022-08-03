@@ -1387,6 +1387,14 @@ div[data-elementor-type="footer"] a {
 	text-decoration: underline;
 }
 
+/* Global Footer */
+
+@media only screen and (min-width: 1024px) {
+	.home #global-footer {
+		margin-top: -140px !important;
+	}
+}
+
 
 /* Gravity Forms */
 
@@ -1400,7 +1408,6 @@ ul.gform_fields li.gfield select {
 
 
 /* Programs Awardees List */
-
 
 #awardees-wrapper h3, #aod-wrapper h3, h3.iba-award-header {
 	font-size: 18px;

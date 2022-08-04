@@ -371,7 +371,11 @@ if ( get_field('display_sponsors')) {
 
             if (get_field('rename_donor_header')) {
                 $donor_header = get_field('rename_donor_header');
+	    }
+            if (get_field('rename_presentation_sponsors_header')) {
+                $presentation_header = get_field('rename_presentation_sponsors_header');
             }
+
                                                 
         }  
 

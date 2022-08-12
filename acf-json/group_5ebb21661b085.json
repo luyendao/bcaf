@@ -61,7 +61,7 @@
         },
         {
             "key": "field_5ebc59bd05c7c",
-            "label": "Rename Title Sponsor Header",
+            "label": "Rename Sponsor Header",
             "name": "rename_sponsor_header",
             "type": "text",
             "instructions": "",
@@ -88,7 +88,7 @@
         },
         {
             "key": "field_5ebb2182a2c07",
-            "label": "Title Sponsor",
+            "label": "Select Sponsor(s)",
             "name": "partner_type_sponsor",
             "type": "relationship",
             "instructions": "",
@@ -113,7 +113,7 @@
         },
         {
             "key": "field_61576628bc368",
-            "label": "Rename Presentation Sponsors Header",
+            "label": "Rename Sponsor Header",
             "name": "rename_presentation_sponsors_header",
             "type": "text",
             "instructions": "",
@@ -140,7 +140,7 @@
         },
         {
             "key": "field_61576617bc367",
-            "label": "Presentation Sponsors",
+            "label": "Select Sponsor(s)",
             "name": "presentation_sponsors",
             "type": "relationship",
             "instructions": "",
@@ -165,7 +165,7 @@
         },
         {
             "key": "field_5ebc59d105c7d",
-            "label": "Rename Category Sponsors \/ Strategic Partner",
+            "label": "Rename Sponsor Header",
             "name": "rename_strategic_partner_header",
             "type": "text",
             "instructions": "",
@@ -192,7 +192,7 @@
         },
         {
             "key": "field_5ebb21a9a2c08",
-            "label": "Category Sponsors \/ Strategic Partner",
+            "label": "Select Sponsor(s)",
             "name": "partner_type_strategic_partner",
             "type": "relationship",
             "instructions": "",
@@ -217,7 +217,7 @@
         },
         {
             "key": "field_5ebc59e305c7e",
-            "label": "Rename Supporting Organizations \/ Event Partner Header",
+            "label": "Rename Sponsor Header",
             "name": "rename_event_partner_header",
             "type": "text",
             "instructions": "",
@@ -244,7 +244,7 @@
         },
         {
             "key": "field_5ebb21b8a2c09",
-            "label": "Event Partner \/ Supporting Organizations",
+            "label": "Select Sponsor(s)",
             "name": "partner_type_event_partner",
             "type": "relationship",
             "instructions": "",
@@ -269,7 +269,7 @@
         },
         {
             "key": "field_5ebc59ea05c7f",
-            "label": "Rename Media Sponsors \/ Donors Header",
+            "label": "Rename Sponsor Header",
             "name": "rename_donor_header",
             "type": "text",
             "instructions": "",
@@ -296,7 +296,7 @@
         },
         {
             "key": "field_5ebb21c7a2c0a",
-            "label": "Media Sponsors \/ Donors",
+            "label": "Select Sponsor(s)",
             "name": "partner_type_donor",
             "type": "relationship",
             "instructions": "",
@@ -321,7 +321,7 @@
         },
         {
             "key": "field_5ee3c4433b9e3",
-            "label": "Supporting Organizations",
+            "label": "Select Sponsor(s)",
             "name": "supporting_organizations",
             "type": "relationship",
             "instructions": "",
@@ -365,5 +365,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652846037
+    "modified": 1660169357
 }

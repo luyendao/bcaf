@@ -1563,6 +1563,12 @@ li.awardee-aod  .columns.eight {
 	margin-top: 0px;
 }
 
+.sponsors img {
+ 	max-width:  260px !important;
+ 	min-width:  260px !important;
+}
+
+
 .sponsors h4 {
 	font-size:20px;
 	font-weight: bold;

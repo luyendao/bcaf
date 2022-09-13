@@ -6,7 +6,7 @@
 
 // ADD SHORTCODES
 add_shortcode( 'past_programs', '_past_programs' );
-add_shortcode( 'award_sponsors', '_award_sponsors' );
+add_shortcode( 'award_sponsors', '_iba_award_sponsors' );
 add_shortcode( 'awardees', '_awardees_by_taxonomy' );
 
 add_shortcode( 'awardees_banner', '_awardees_banner' );
@@ -313,16 +313,22 @@ function _past_programs($atts){
 
 /* FUNCTION: LIST SPONSORS BY ACF */
 
-function _award_sponsors($atts) {
+function _iba_award_sponsors($atts) {
 
-if ( get_field('display_sponsors')) {
+// Default value for shortcode is current post ID
+ extract(shortcode_atts(array(
+      'pid' => $post->ID,
+   ), $atts));
+
+
+if ( get_field('display_sponsors', $pid)) {
 
 
  // award_year term ID
-        $terms_award_year = get_the_terms( $post->ID, 'award_year' ); 
+        $terms_award_year = get_the_terms( $pid, 'award_year' ); 
 
         // Get Award Category Slug and Name
-        $terms_award_cat = get_the_terms( $post->ID, 'award_categories' ); 
+        $terms_award_cat = get_the_terms( $pid, 'award_categories' ); 
         foreach($terms_award_cat as $term) {
           $term_cat_id = $term->term_id;
           //$term_cat_slug = $term->slug;
@@ -332,7 +338,7 @@ if ( get_field('display_sponsors')) {
         // Default Sponsor Levels 
         
 		if (get_field('sponsors_section_header')) {
-			$sponsors_section_header = get_field('sponsors_section_header');
+			$sponsors_section_header = get_field('sponsors_section_header', $pid);
 		} else {
 			$sponsors_section_header = "With thanks to our program partners";	// Default
 		}
@@ -340,55 +346,61 @@ if ( get_field('display_sponsors')) {
 
         // If IBA 
         if ( $term_cat_id === 5 ) {
-            $govt_header = sprintf('<div class="row sponsors"><a href="%s"><img src="%s" alt="BC Government" style="width: 200px;" /></a></div>',  'https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/indigenous-relations-reconciliation', 'https://www.bcachievement.com/wp-content/uploads/2020/05/Logos_0031_BC-Government.jpg');
+            $govt_logo = sprintf('<div class="row sponsors"><a href="%s"><img src="%s" alt="BC Government" style="width: 200px;" /></a></div>',  'https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/indigenous-relations-reconciliation', 'https://www.bcachievement.com/wp-content/uploads/2020/05/Logos_0031_BC-Government.jpg');
         } else {
-            $govt_header ='';
+            $govt_logo ='';
         }
         $supporting_orgs = "Organizations";
         $sponsor_header = "Sponsors";
-	$presentation_header = "Presentation Sponsor";
-	$strategic_header = "Strategic Partners";
+	    $presentation_header = "Presentation Sponsor";
+	    $strategic_header = "Strategic Partners";
         $event_header = "Event Partners";
         $donor_header = "Donors";
         $supporting_header = "Organizations";
 
 
         // Override IBA Sponsor Headers
-        if (get_field('override_sponsor_level_labels') == 1) {
+        if (get_field('override_sponsor_level_labels', $pid) == 1) {
             $is_iba = TRUE;
 
-            if (get_field('rename_sponsor_header')) {
-                $sponsor_header = get_field('rename_sponsor_header');
+            if (get_field('rename_sponsor_header', $pid)) {
+                $sponsor_header = get_field('rename_sponsor_header', $pid);
             }
 
-            if (get_field('rename_strategic_partner_header')) {
-                $strategic_header = get_field('rename_strategic_partner_header');
+            if (get_field('rename_strategic_partner_header', $pid)) {
+                $strategic_header = get_field('rename_strategic_partner_header', $pid);
             }
 
-            if (get_field('rename_event_partner_header')) {
-                $event_header = get_field('rename_event_partner_header');
+            if (get_field('rename_event_partner_header', $pid)) {
+                $event_header = get_field('rename_event_partner_header', $pid);
             }
 
-            if (get_field('rename_donor_header')) {
-                $donor_header = get_field('rename_donor_header');
-	    }
-            if (get_field('rename_presentation_sponsors_header')) {
-                $presentation_header = get_field('rename_presentation_sponsors_header');
+            if (get_field('rename_donor_header', $pid)) {
+                $donor_header = get_field('rename_donor_header', $pid);
+	       }
+            if (get_field('rename_presentation_sponsors_header', $pid)) {
+                $presentation_header = get_field('rename_presentation_sponsors_header', $pid);
             }
-
-                                                
+            if (get_field('rename_additional_sponsors_a', $pid)) {
+                $additional_sponsor_header_a = get_field('rename_additional_sponsors_a', $pid);
+            }                        
         }  
 
 
-    $out = sprintf('<div class="row sponsors" style="margin-top: 30px;"><h2 class="typeface2">%s</h2></div>', $sponsors_section_header);
-
-    $out .= $govt_header;
 
 
-    if ( get_field('supporting_organizations')) {
+// HEADER //
 
 
-        $supporting = get_field('supporting_organizations');
+        $out = '<div class="row sponsors" style="margin-top: 30px;"><h2 class="typeface2" style="background-color: #DF8627; padding: 5px 15px; color: #fff;">THANK YOU TO OUR 2022 SUPPORTERS</h2></div>';
+
+
+
+//Block 1 Supporting Organizations (BCAFN, FNS, MNBC, UBCIC)
+
+    if ( get_field('supporting_organizations', $pid)) {
+
+        $supporting = get_field('supporting_organizations', $pid);
 
 
         // Returns sponsor post ID
@@ -411,10 +423,20 @@ if ( get_field('display_sponsors')) {
     }  
 
 
-    if ( get_field('partner_type_sponsor')) {
+//****** GOVT ******//
+
+    $gov = sprintf('<div class="columns tweleve sponsors" style="margin-top: 30px;">%s</div>', $govt_logo);
+
+    $group_gov = sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', "Program Partner", $gov);
+
+
+// ****** LEAD SPONSOR ******* //
+
+
+    if ( get_field('partner_type_sponsor', $pid)) {
 
       
-        $sponsors = get_field('partner_type_sponsor');
+        $sponsors = get_field('partner_type_sponsor', $pid);
 
         // Returns sponsor post ID
         foreach( $sponsors as $sid ): 
@@ -426,26 +448,36 @@ if ( get_field('display_sponsors')) {
             }
             $alt_title = get_field(get_the_title($sid));
 
-            $sponsors_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            $sponsors_markup1 .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" alt="" style="max-width: 250px;" /></a></div>', $url, $logo );
     
         endforeach;        
 
 
 
         // Output entire markup
-        $out .= sprintf('<div class="row sponsors partner-sponsor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $sponsor_header, $sponsors_markup);
+        $group1 = sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $sponsor_header, $sponsors_markup1);
     }
+
+
+
+        // Block 2 Program Partner: Govt BC Lead Sponsor: Vancity
+        $out .= sprintf('<div class="row sponsors">%s%s</div>', $group_gov, $group1);
+
+
+
+
+
+
+
 
 
     //***** PRESENTATION SPONSOR *****//
 
 
+    if ( get_field('presentation_sponsors', $pid)) {
 
 
-    if ( get_field('presentation_sponsors')) {
-
-
-        $sponsors = get_field('presentation_sponsors');
+        $sponsors = get_field('presentation_sponsors', $pid);
 
         // Returns sponsor post ID 
         foreach( $sponsors as $sid ):
@@ -457,27 +489,31 @@ if ( get_field('display_sponsors')) {
             }
             $alt_title = get_field(get_the_title($sid));
 
-            $presentation_sponsor_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            $presentation_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" alt="" style="max-width: 250px;" /></a></div>', $url, $logo );
 
         endforeach;
 
 
 
         // Output entire markup
-        $out .= sprintf('<div class="row sponsors presentation-sponsor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $presentation_header, $presentation_sponsor_markup);
+        $group2 = sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $presentation_header, $presentation_sponsor_markup);
 
     }
 
-    
 
 
 
-    if ( get_field('partner_type_strategic_partner')) {
-        
-        $strategic_partners = get_field('partner_type_strategic_partner');
+
+// ****** ALUMNI SPONSOR PROGRAM ******* //
+
+
+    if ( get_field('alumni_program_sponsor', $pid)) {
+
+      
+        $sponsors = get_field('alumni_program_sponsor', $pid);
 
         // Returns sponsor post ID
-        foreach( $strategic_partners as $sid ): 
+        foreach( $sponsors as $sid ): 
 
             $logo = get_field('sponsor_logo', $sid);
             $url = get_field('sponsor_website_url', $sid);
@@ -486,17 +522,65 @@ if ( get_field('display_sponsors')) {
             }
             $alt_title = get_field(get_the_title($sid));
 
-            $strategic_partners_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            $sponsors_markup .= sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+    
+        endforeach;        
+
+
+
+        // Output entire markup
+        $group3 = sprintf('<div class="columns four sponsors"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', 'Alumni Program Sponsor', $sponsors_markup);
+
+        $sponsors = null;
+        $sponsors_markup = null;
+    }
+
+
+
+    
+
+
+
+    //***** PRESENTATION SPONSOR: TEK *****//
+
+
+    if ( get_field('partner_type_strategic_partner', $pid)) {
+        
+        $sponsors = get_field('partner_type_strategic_partner', $pid);
+
+        // Returns sponsor post ID
+        foreach( $sponsors as $sid ): 
+
+            $logo = get_field('sponsor_logo', $sid);
+            $url = get_field('sponsor_website_url', $sid);
+            if (empty($url)) {
+                $url = 'javascript:;';
+            }
+            $alt_title = get_field(get_the_title($sid));
+
+            $sponsors_markup .= sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
     
         endforeach;  
 
-        $out .= sprintf('<div class="row sponsors partner-strategic-sponsor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $strategic_header, $strategic_partners_markup);
+        $group4 = sprintf('<div class="columns four sponsors"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $strategic_header, $sponsors_markup);
 
     }
 
-    if ( get_field('partner_type_event_partner')) {
+
+/**** Group together Block 3 - Enbridge, TD, Teck ****/
+
+    $out .= sprintf('<div class="row sponsors">%s%s%s</div>', $group2, $group3, $group4 );
+
+
+
+
+
+
+/* FILM SPONSORS */
+
+    if ( get_field('partner_type_event_partner', $pid)) {
         
-        $event_partners = get_field('partner_type_event_partner');
+        $event_partners = get_field('partner_type_event_partner', $pid);
 
 
 
@@ -519,10 +603,44 @@ if ( get_field('display_sponsors')) {
 
     }
 
-    if ( get_field('partner_type_donor')) {
 
 
-        $donors = get_field('partner_type_donor');
+/* SUPPORTING SPONSORS */
+
+
+ if ( get_field('supporting_sponsors', $pid)) {
+
+
+        $supporting_sponsors = get_field('supporting_sponsors', $pid);
+
+
+        // Returns sponsor post ID
+        foreach( $supporting_sponsors as $sid ): 
+
+            $logo = get_field('sponsor_logo', $sid);
+            $url = get_field('sponsor_website_url', $sid);
+            if (empty($url)) {
+                $url = 'javascript:;';
+            }
+            $alt_title = get_field(get_the_title($sid));
+
+            $supporting_sponsors_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+    
+        endforeach;  
+
+         $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', 'Supporting Sponsors', $supporting_sponsors_markup);
+
+        
+    }        
+
+
+
+/* MEDIA SPONSORS */
+
+    if ( get_field('partner_type_donor', $pid)) {
+
+
+        $donors = get_field('partner_type_donor', $pid);
 
 
         // Returns sponsor post ID
@@ -539,7 +657,7 @@ if ( get_field('display_sponsors')) {
     
         endforeach;  
 
-         $out .= sprintf('<div class="row sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $donor_header, $donors_markup);
+         $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $donor_header, $donors_markup);
 
         
     }        

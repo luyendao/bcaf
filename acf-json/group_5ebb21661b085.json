@@ -60,6 +60,33 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_5ee3c4433b9e3",
+            "label": "Select Sponsor(s)",
+            "name": "supporting_organizations",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "sponsor"
+            ],
+            "taxonomy": [
+                "sponsor_category:supporting-organization"
+            ],
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
             "key": "field_5ebc59bd05c7c",
             "label": "Rename Sponsor Header",
             "name": "rename_sponsor_header",
@@ -216,6 +243,31 @@
             "return_format": "object"
         },
         {
+            "key": "field_62fbec0ddae2e",
+            "label": "Select Alumni Sponsor",
+            "name": "alumni_program_sponsor",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "sponsor"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "object"
+        },
+        {
             "key": "field_5ebc59e305c7e",
             "label": "Rename Sponsor Header",
             "name": "rename_event_partner_header",
@@ -244,7 +296,7 @@
         },
         {
             "key": "field_5ebb21b8a2c09",
-            "label": "Select Sponsor(s)",
+            "label": "Select Film Sponsor(s)",
             "name": "partner_type_event_partner",
             "type": "relationship",
             "instructions": "",
@@ -296,7 +348,7 @@
         },
         {
             "key": "field_5ebb21c7a2c0a",
-            "label": "Select Sponsor(s)",
+            "label": "Select Media Sponsor(s)",
             "name": "partner_type_donor",
             "type": "relationship",
             "instructions": "",
@@ -320,9 +372,9 @@
             "return_format": "id"
         },
         {
-            "key": "field_5ee3c4433b9e3",
-            "label": "Select Sponsor(s)",
-            "name": "supporting_organizations",
+            "key": "field_62fbedc2d7061",
+            "label": "Select Supporting Sponsors",
+            "name": "supporting_sponsors",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -335,9 +387,7 @@
             "post_type": [
                 "sponsor"
             ],
-            "taxonomy": [
-                "sponsor_category:supporting-organization"
-            ],
+            "taxonomy": "",
             "filters": [
                 "search"
             ],
@@ -365,5 +415,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1660169357
+    "modified": 1660677594
 }

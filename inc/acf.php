@@ -6,6 +6,8 @@
 
 // ADD SHORTCODES
 add_shortcode( 'past_programs', '_past_programs' );
+
+// Line 314
 add_shortcode( 'award_sponsors', '_iba_award_sponsors' );
 add_shortcode( 'awardees', '_awardees_by_taxonomy' );
 
@@ -313,6 +315,8 @@ function _past_programs($atts){
 
 /* FUNCTION: LIST SPONSORS BY ACF */
 
+// Shortcode: [award_sponsors pid=]
+
 function _iba_award_sponsors($atts) {
 
 // Default value for shortcode is current post ID
@@ -380,10 +384,7 @@ if ( get_field('display_sponsors', $pid)) {
 	       }
             if (get_field('rename_presentation_sponsors_header', $pid)) {
                 $presentation_header = get_field('rename_presentation_sponsors_header', $pid);
-            }
-            if (get_field('rename_additional_sponsors_a', $pid)) {
-                $additional_sponsor_header_a = get_field('rename_additional_sponsors_a', $pid);
-            }                        
+            }                       
         }  
 
 

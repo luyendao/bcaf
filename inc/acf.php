@@ -350,14 +350,16 @@ if ( get_field('display_sponsors', $pid)) {
 
         // If IBA 
         if ( $term_cat_id === 5 ) {
-            $govt_logo = sprintf('<div class="row sponsors"><a href="%s"><img src="%s" alt="BC Government" style="width: 200px;" /></a></div>',  'https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/indigenous-relations-reconciliation', 'https://www.bcachievement.com/wp-content/uploads/2020/05/Logos_0031_BC-Government.jpg');
-        } else {
-            $govt_logo ='';
-        }
-        $supporting_orgs = "Organizations";
+
+	// BC Government Sponsor Post ID: 15854	
+		
+	$govt_logo = sprintf('<div class="row sponsors"><a href="%s"><img src="%s" alt="BC Government" style="width: 200px;" /></a></div>',  'https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/indigenous-relations-reconciliation', 'https://www.bcachievement.com/wp-content/uploads/2022/09/BC_Logo_vertical.jpg');
+	} 
+
+	$supporting_orgs = "Organizations";
         $sponsor_header = "Sponsors";
-	    $presentation_header = "Presentation Sponsor";
-	    $strategic_header = "Strategic Partners";
+	$presentation_header = "Presentation Sponsor";
+	$strategic_header = "Strategic Partners";
         $event_header = "Event Partners";
         $donor_header = "Donors";
         $supporting_header = "Organizations";
@@ -392,8 +394,10 @@ if ( get_field('display_sponsors', $pid)) {
 
 // HEADER //
 
+	$sponsor_header_copy = get_field('sponsors_section_header', $pid); 
 
-        $out = '<div class="row sponsors" style="margin-top: 30px;"><h2 class="typeface2" style="background-color: #DF8627; padding: 5px 15px; color: #fff;">THANK YOU TO OUR 2022 SUPPORTERS</h2></div>';
+
+        $out = sprintf('<div class="row sponsors" style="margin-top: 30px;"><h2 class="typeface2" style="background-color: #DF8627; padding: 5px 15px; color: #fff;">%s</h2></div>',$sponsor_header_copy);
 
 
 

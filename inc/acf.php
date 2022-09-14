@@ -351,15 +351,11 @@ if ( get_field('display_sponsors', $pid)) {
         // If IBA 
         if ( $term_cat_id === 5 ) {
 
-	// BC Government Sponsor Post ID: 15854	
-		
-	$govt_logo = sprintf('<div class="row sponsors"><a href="%s"><img src="%s" alt="BC Government" style="width: 200px;" /></a></div>',  'https://www2.gov.bc.ca/gov/content/governments/organizational-structure/ministries-organizations/ministries/indigenous-relations-reconciliation', 'https://www.bcachievement.com/wp-content/uploads/2022/09/BC_Logo_vertical.jpg');
-	} 
 
-	$supporting_orgs = "Organizations";
+	    $supporting_orgs = "Organizations";
         $sponsor_header = "Sponsors";
-	$presentation_header = "Presentation Sponsor";
-	$strategic_header = "Strategic Partners";
+	    $presentation_header = "Presentation Sponsor";
+	    $strategic_header = "Strategic Partners";
         $event_header = "Event Partners";
         $donor_header = "Donors";
         $supporting_header = "Organizations";
@@ -428,7 +424,14 @@ if ( get_field('display_sponsors', $pid)) {
     }  
 
 
-//****** GOVT ******//
+//****** BC GOVT ******//        
+
+    $bc_govt_sponsor_pid = 15854; 
+    $bc_govt_sponsor_logo = get_field('sponsor_logo', $bc_govt_sponsor_pid);
+    $bc_govt_sponsor_url = get_field('sponsor_website_url', $bc_govt_sponsor_pid);
+
+    $govt_logo = sprintf('<div class="row sponsors"><a href="%s"><img src="%s" alt="BC Government" style="max-width: 260px;" /></a></div>',$bc_govt_sponsor_url, $bc_govt_sponsor_logo );
+    } 
 
     $gov = sprintf('<div class="columns tweleve sponsors" style="margin-top: 30px;">%s</div>', $govt_logo);
 

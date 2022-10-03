@@ -1,6 +1,6 @@
 {
     "key": "group_5eb9f454ce4f6",
-    "title": "Sponsor Information",
+    "title": "Sponsor Fields",
     "fields": [
         {
             "key": "field_5eb9f466bea5b",
@@ -61,5 +61,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652846065
+    "modified": 1663117158
 }

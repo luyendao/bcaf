@@ -1572,16 +1572,17 @@ li.awardee-aod  .columns.eight {
 }
 
 
-@media (max-width: 550px) {
+/*
+@media (max-width: 667px) {
 
 	.sponsors img {
-		max-width: 240px !important;
-		margin-top: -30px;
-    	margin-bottom: -30px;
+		width: 300px !important;
+		display: block;
+		margin: -40px auto;
 	}
 
 }
-
+*/
 
 
 /* Global Styles */
@@ -1718,3 +1719,13 @@ background: #fff !important;
 .postid-9212 .elementor-183 .elementor-element.elementor-element-5c459d9>.elementor-widget-container {
 	background-color: rgb(130, 130, 130, 0.8 ) !important;
 }
+
+
+
+.sponsors {
+@media only screen and  (min-width: 767px) {
+  img {
+        max-width: 260px;
+  }
+}
+

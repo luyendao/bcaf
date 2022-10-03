@@ -325,14 +325,15 @@ function _iba_award_sponsors($atts) {
    ), $atts));
 
 
-if ( get_field('display_sponsors', $pid)) {
+if ( get_field('display_sponsors', $pid)):
 
 
- // award_year term ID
+        // award_year term ID
         $terms_award_year = get_the_terms( $pid, 'award_year' ); 
 
         // Get Award Category Slug and Name
         $terms_award_cat = get_the_terms( $pid, 'award_categories' ); 
+        
         foreach($terms_award_cat as $term) {
           $term_cat_id = $term->term_id;
           //$term_cat_slug = $term->slug;
@@ -348,14 +349,10 @@ if ( get_field('display_sponsors', $pid)) {
 		}
 
 
-        // If IBA 
-        if ( $term_cat_id === 5 ) {
-
-
-	    $supporting_orgs = "Organizations";
+        $supporting_orgs = "Organizations";
         $sponsor_header = "Sponsors";
-	    $presentation_header = "Presentation Sponsor";
-	    $strategic_header = "Strategic Partners";
+        $presentation_header = "Presentation Sponsor";
+        $strategic_header = "Strategic Partners";
         $event_header = "Event Partners";
         $donor_header = "Donors";
         $supporting_header = "Organizations";
@@ -379,7 +376,7 @@ if ( get_field('display_sponsors', $pid)) {
 
             if (get_field('rename_donor_header', $pid)) {
                 $donor_header = get_field('rename_donor_header', $pid);
-	       }
+           }
             if (get_field('rename_presentation_sponsors_header', $pid)) {
                 $presentation_header = get_field('rename_presentation_sponsors_header', $pid);
             }                       
@@ -387,127 +384,363 @@ if ( get_field('display_sponsors', $pid)) {
 
 
 
+        // HEADER //
 
-// HEADER //
+            $sponsor_header_copy = get_field('sponsors_section_header', $pid); 
 
-	$sponsor_header_copy = get_field('sponsors_section_header', $pid); 
-
-
-        $out = sprintf('<div class="row sponsors" style="margin-top: 30px;"><h2 class="typeface2" style="background-color: #DF8627; padding: 5px 15px; color: #fff;">%s</h2></div>',$sponsor_header_copy);
-
-
-
-//Block 1 Supporting Organizations (BCAFN, FNS, MNBC, UBCIC)
-
-    if ( get_field('supporting_organizations', $pid)) {
-
-        $supporting = get_field('supporting_organizations', $pid);
+            if ( $term_cat_id === 5 ):
+                $bar_color = 'style="background-color: #DF8627;';
+            endif;
 
 
-        // Returns sponsor post ID
-        foreach( $supporting as $sid ): 
+            $out = sprintf('<div class="row sponsors" style="margin-top: 30px;"><h2 class="typeface2" %s padding: 5px 15px; color: #fff;">%s</h2></div>', $bar_color, $sponsor_header_copy);
 
-            $logo = get_field('sponsor_logo', $sid);
-            $url = get_field('sponsor_website_url', $sid);
-            if (empty($url)) {
-                $url = 'javascript:;';
+
+
+
+
+        // If IBA 
+        if ( $term_cat_id === 5 ):
+
+
+
+        //Block 1 Supporting Organizations (BCAFN, FNS, MNBC, UBCIC)
+
+            if ( get_field('supporting_organizations', $pid)) {
+
+                $supporting = get_field('supporting_organizations', $pid);
+
+
+                // Returns sponsor post ID
+                foreach( $supporting as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $supporting_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
+
+                 $out .= sprintf('<div class="row sponsors supporting-organizations"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $supporting_orgs, $supporting_markup);
+
+                
+            }  
+
+
+        //****** BC GOVT ******//        
+
+            $bc_govt_sponsor_pid = 15854; 
+            $bc_govt_sponsor_logo = get_field('sponsor_logo', $bc_govt_sponsor_pid);
+            $bc_govt_sponsor_url = get_field('sponsor_website_url', $bc_govt_sponsor_pid);
+
+            $govt_logo = sprintf('<div class="row sponsors"><a href="%s"><img src="%s" alt="BC Government" style="max-width: 260px;" /></a></div>',$bc_govt_sponsor_url, $bc_govt_sponsor_logo );
+
+            $gov = sprintf('<div class="columns tweleve sponsors" style="margin-top: 30px;">%s</div>', $govt_logo);
+
+            $group_gov = sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', "Program Partner", $gov);
+
+
+        // ****** LEAD SPONSOR ******* //
+
+
+            if ( get_field('partner_type_sponsor', $pid)) {
+
+              
+                $sponsors = get_field('partner_type_sponsor', $pid);
+
+                // Returns sponsor post ID
+                foreach( $sponsors as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $sponsors_markup1 .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" alt="" style="max-width: 250px;" /></a></div>', $url, $logo );
+            
+                endforeach;        
+
+
+
+                // Output entire markup
+                $group1 = sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $sponsor_header, $sponsors_markup1);
             }
-            $alt_title = get_field(get_the_title($sid));
-
-            $supporting_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
-    
-        endforeach;  
-
-         $out .= sprintf('<div class="row sponsors supporting-organizations"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $supporting_orgs, $supporting_markup);
-
-        
-    }  
 
 
-//****** BC GOVT ******//        
 
-    $bc_govt_sponsor_pid = 15854; 
-    $bc_govt_sponsor_logo = get_field('sponsor_logo', $bc_govt_sponsor_pid);
-    $bc_govt_sponsor_url = get_field('sponsor_website_url', $bc_govt_sponsor_pid);
-
-    $govt_logo = sprintf('<div class="row sponsors"><a href="%s"><img src="%s" alt="BC Government" style="max-width: 260px;" /></a></div>',$bc_govt_sponsor_url, $bc_govt_sponsor_logo );
-    } 
-
-    $gov = sprintf('<div class="columns tweleve sponsors" style="margin-top: 30px;">%s</div>', $govt_logo);
-
-    $group_gov = sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', "Program Partner", $gov);
+                // Block 2 Program Partner: Govt BC Lead Sponsor: Vancity
+                $out .= sprintf('<div class="row sponsors">%s%s</div>', $group_gov, $group1);
 
 
-// ****** LEAD SPONSOR ******* //
 
 
-    if ( get_field('partner_type_sponsor', $pid)) {
 
-      
-        $sponsors = get_field('partner_type_sponsor', $pid);
+            //***** PRESENTATION SPONSOR *****//
 
-        // Returns sponsor post ID
-        foreach( $sponsors as $sid ): 
 
-            $logo = get_field('sponsor_logo', $sid);
-            $url = get_field('sponsor_website_url', $sid);
-            if (empty($url)) {
-                $url = 'javascript:;';
+            if ( get_field('presentation_sponsors', $pid)) {
+
+
+                $sponsors = get_field('presentation_sponsors', $pid);
+
+                // Returns sponsor post ID 
+                foreach( $sponsors as $sid ):
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $presentation_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" alt="" style="max-width: 250px;" /></a></div>', $url, $logo );
+
+                endforeach;
+
+
+
+                // Output entire markup
+                $group2 = sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $presentation_header, $presentation_sponsor_markup);
+
             }
-            $alt_title = get_field(get_the_title($sid));
-
-            $sponsors_markup1 .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" alt="" style="max-width: 250px;" /></a></div>', $url, $logo );
-    
-        endforeach;        
 
 
 
-        // Output entire markup
-        $group1 = sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $sponsor_header, $sponsors_markup1);
-    }
+        // ****** ALUMNI SPONSOR PROGRAM ******* //
+
+
+            if ( get_field('alumni_program_sponsor', $pid)) {
+
+              
+                $sponsors = get_field('alumni_program_sponsor', $pid);
+
+                // Returns sponsor post ID
+                foreach( $sponsors as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $sponsors_markup .= sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;        
 
 
 
-        // Block 2 Program Partner: Govt BC Lead Sponsor: Vancity
-        $out .= sprintf('<div class="row sponsors">%s%s</div>', $group_gov, $group1);
+                // Output entire markup
+                $group3 = sprintf('<div class="columns four sponsors"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', 'Alumni Program Sponsor', $sponsors_markup);
 
-
-
-
-
-
-
-
-
-    //***** PRESENTATION SPONSOR *****//
-
-
-    if ( get_field('presentation_sponsors', $pid)) {
-
-
-        $sponsors = get_field('presentation_sponsors', $pid);
-
-        // Returns sponsor post ID 
-        foreach( $sponsors as $sid ):
-
-            $logo = get_field('sponsor_logo', $sid);
-            $url = get_field('sponsor_website_url', $sid);
-            if (empty($url)) {
-                $url = 'javascript:;';
+                $sponsors = null;
+                $sponsors_markup = null;
             }
-            $alt_title = get_field(get_the_title($sid));
-
-            $presentation_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" alt="" style="max-width: 250px;" /></a></div>', $url, $logo );
-
-        endforeach;
 
 
 
-        // Output entire markup
-        $group2 = sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $presentation_header, $presentation_sponsor_markup);
+            
 
-    }
+            //***** PRESENTATION SPONSOR: TEK *****//
 
+
+            if ( get_field('partner_type_strategic_partner', $pid)) {
+                
+                $sponsors = get_field('partner_type_strategic_partner', $pid);
+
+                // Returns sponsor post ID
+                foreach( $sponsors as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $sponsors_markup .= sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
+
+                $group4 = sprintf('<div class="columns four sponsors"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $strategic_header, $sponsors_markup);
+
+            }
+
+
+        /**** Group together Block 3 - Enbridge, TD, Teck ****/
+
+            $out .= sprintf('<div class="row sponsors">%s%s%s</div>', $group2, $group3, $group4 );
+
+
+
+
+        /* FILM SPONSORS */
+
+            if ( get_field('partner_type_event_partner', $pid)) {
+                
+                $event_partners = get_field('partner_type_event_partner', $pid);
+
+
+
+                // Returns sponsor post ID
+                foreach( $event_partners as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $event_partners_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
+
+                 $out .= sprintf('<div class="row sponsors partner-event"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $event_header, $event_partners_markup);
+
+
+            }
+
+
+
+        /* SUPPORTING SPONSORS */
+
+
+         if ( get_field('supporting_sponsors', $pid)) {
+
+
+                $supporting_sponsors = get_field('supporting_sponsors', $pid);
+
+
+                // Returns sponsor post ID
+                foreach( $supporting_sponsors as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $supporting_sponsors_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
+
+                 $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', 'Supporting Sponsors', $supporting_sponsors_markup);
+
+                
+            }        
+
+
+
+        /* MEDIA SPONSORS */
+
+            if ( get_field('partner_type_donor', $pid)) {
+
+                $donors = get_field('partner_type_donor', $pid);
+
+                // Returns sponsor post ID
+                foreach( $donors as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $donors_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
+
+                 $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $donor_header, $donors_markup);
+
+                
+            }        
+
+
+            return $out;
+
+
+
+
+        endif;
+
+
+        if ( $term_cat_id !== 5 ):
+
+        // ****** LEAD SPONSOR ******* //
+
+
+            if ( get_field('partner_type_sponsor', $pid)) {
+
+              
+                $sponsors = get_field('partner_type_sponsor', $pid);
+
+                // Returns sponsor post ID
+                foreach( $sponsors as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $sponsors_markup1 .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" style="max-width: 250px;" /></a></div>', $url, $logo );
+            
+                endforeach;        
+
+            }
+
+
+                $group1 = sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $sponsor_header, $sponsors_markup1);
+
+
+
+                $out .= sprintf('<div class="row sponsors">%s</div>', $group1);
+
+
+
+
+            //***** PRESENTATION SPONSOR *****//
+
+
+            if ( get_field('presentation_sponsors', $pid)) {
+
+
+                $sponsors = get_field('presentation_sponsors', $pid);
+
+                // Returns sponsor post ID 
+                foreach( $sponsors as $sid ):
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $presentation_sponsor_markup .= sprintf('<div class="columns four"><a href="%s" target="_blank"><img src="%s" alt="" style="max-width: 250px;" /></a></div>', $url, $logo );
+
+                endforeach;
+
+
+
+                // Output entire markup
+                $group2 = sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $presentation_header, $presentation_sponsor_markup);
+
+            }
+
+
+
+            $out .= sprintf('<div class="row sponsors">%s</div>',$group2);
 
 
 
@@ -515,168 +748,136 @@ if ( get_field('display_sponsors', $pid)) {
 // ****** ALUMNI SPONSOR PROGRAM ******* //
 
 
-    if ( get_field('alumni_program_sponsor', $pid)) {
+            if ( get_field('alumni_program_sponsor', $pid)) {
 
-      
-        $sponsors = get_field('alumni_program_sponsor', $pid);
+              
+                $sponsors = get_field('alumni_program_sponsor', $pid);
 
-        // Returns sponsor post ID
-        foreach( $sponsors as $sid ): 
+                // Returns sponsor post ID
+                foreach( $sponsors as $sid ): 
 
-            $logo = get_field('sponsor_logo', $sid);
-            $url = get_field('sponsor_website_url', $sid);
-            if (empty($url)) {
-                $url = 'javascript:;';
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $sponsors_markup .= sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;        
+
+
+
+                // Output entire markup
+                $group3 = sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $presentation_header, $presentation_sponsor_markup);
+
             }
-            $alt_title = get_field(get_the_title($sid));
-
-            $sponsors_markup .= sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
-    
-        endforeach;        
 
 
-
-        // Output entire markup
-        $group3 = sprintf('<div class="columns four sponsors"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', 'Alumni Program Sponsor', $sponsors_markup);
-
-        $sponsors = null;
-        $sponsors_markup = null;
-    }
+            $out .= sprintf('<div class="row sponsors">%s</div>', $group3);
 
 
+            
 
-    
+            if ( get_field('partner_type_strategic_partner', $pid)) {
+                
+                $sponsors = get_field('partner_type_strategic_partner', $pid);
 
+                // Returns sponsor post ID
+                foreach( $sponsors as $sid ): 
 
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
 
-    //***** PRESENTATION SPONSOR: TEK *****//
+                    $sponsors_markup .= sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
 
+                $group4 = sprintf('<div class="columns twelve sponsors"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $strategic_header, $sponsors_markup);
 
-    if ( get_field('partner_type_strategic_partner', $pid)) {
-        
-        $sponsors = get_field('partner_type_strategic_partner', $pid);
-
-        // Returns sponsor post ID
-        foreach( $sponsors as $sid ): 
-
-            $logo = get_field('sponsor_logo', $sid);
-            $url = get_field('sponsor_website_url', $sid);
-            if (empty($url)) {
-                $url = 'javascript:;';
             }
-            $alt_title = get_field(get_the_title($sid));
-
-            $sponsors_markup .= sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
-    
-        endforeach;  
-
-        $group4 = sprintf('<div class="columns four sponsors"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $strategic_header, $sponsors_markup);
-
-    }
 
 
-/**** Group together Block 3 - Enbridge, TD, Teck ****/
-
-    $out .= sprintf('<div class="row sponsors">%s%s%s</div>', $group2, $group3, $group4 );
+            $out .= sprintf('<div class="row sponsors">%s</div>', $group4);
 
 
 
 
+        /* FILM SPONSORS */
 
-
-/* FILM SPONSORS */
-
-    if ( get_field('partner_type_event_partner', $pid)) {
-        
-        $event_partners = get_field('partner_type_event_partner', $pid);
+            if ( get_field('partner_type_event_partner', $pid)) {
+                
+                $event_partners = get_field('partner_type_event_partner', $pid);
 
 
 
-        // Returns sponsor post ID
-        foreach( $event_partners as $sid ): 
+                // Returns sponsor post ID
+                foreach( $event_partners as $sid ): 
 
-            $logo = get_field('sponsor_logo', $sid);
-            $url = get_field('sponsor_website_url', $sid);
-            if (empty($url)) {
-                $url = 'javascript:;';
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $event_partners_markup .= sprintf('<div class="columns four"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
+
+                 $out .= sprintf('<div class="row sponsors partner-event"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $event_header, $event_partners_markup);
+
+
             }
-            $alt_title = get_field(get_the_title($sid));
-
-            $event_partners_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
-    
-        endforeach;  
-
-         $out .= sprintf('<div class="row sponsors partner-event"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $event_header, $event_partners_markup);
-
-
-    }
 
 
 
-/* SUPPORTING SPONSORS */
+        /* SUPPORTING SPONSORS */
 
 
- if ( get_field('supporting_sponsors', $pid)) {
+         if ( get_field('supporting_sponsors', $pid)) {
 
 
-        $supporting_sponsors = get_field('supporting_sponsors', $pid);
+                $supporting_sponsors = get_field('supporting_sponsors', $pid);
 
 
-        // Returns sponsor post ID
-        foreach( $supporting_sponsors as $sid ): 
+                // Returns sponsor post ID
+                foreach( $supporting_sponsors as $sid ): 
 
-            $logo = get_field('sponsor_logo', $sid);
-            $url = get_field('sponsor_website_url', $sid);
-            if (empty($url)) {
-                $url = 'javascript:;';
-            }
-            $alt_title = get_field(get_the_title($sid));
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
 
-            $supporting_sponsors_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
-    
-        endforeach;  
+                    $supporting_sponsors_markup .= sprintf('<div class="columns four"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
 
-         $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', 'Supporting Sponsors', $supporting_sponsors_markup);
+                 $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', 'Supporting Sponsors', $supporting_sponsors_markup);
 
-        
-    }        
-
-
-
-/* MEDIA SPONSORS */
-
-    if ( get_field('partner_type_donor', $pid)) {
+                
+            }        
 
 
-        $donors = get_field('partner_type_donor', $pid);
 
 
-        // Returns sponsor post ID
-        foreach( $donors as $sid ): 
+            return $out;
 
-            $logo = get_field('sponsor_logo', $sid);
-            $url = get_field('sponsor_website_url', $sid);
-            if (empty($url)) {
-                $url = 'javascript:;';
-            }
-            $alt_title = get_field(get_the_title($sid));
-
-            $donors_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
-    
-        endforeach;  
-
-         $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $donor_header, $donors_markup);
-
-        
-    }        
+        endif;
 
 
-    return $out;
-    
-    }
 
-}
+    endif; // If display_sponsors boolean
 
+
+} // end function
 
 
 function _awardee_thumbnail($id, $term_cat_slug) {

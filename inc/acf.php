@@ -642,7 +642,7 @@ if ( get_field('display_sponsors', $pid)):
             
                 endforeach;  
 
-                 $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', 'Supporting Sponsors', $supporting_sponsors_markup);
+                 $out .= sprintf('<div class="row sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', 'Supporting Sponsors', $supporting_sponsors_markup);
 
                 
             }        
@@ -669,7 +669,7 @@ if ( get_field('display_sponsors', $pid)):
             
                 endforeach;  
 
-                 $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $donor_header, $donors_markup);
+                 $out .= sprintf('<div class="row sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $donor_header, $donors_markup);
 
             }        
 
@@ -690,11 +690,11 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $professional_development_sponsor_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+                    $professional_development_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
             
                 endforeach;  
 
-                 $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $professional_development_header, $professional_development_sponsor_markup);
+                 $pro_dev_sponsors .= sprintf('<div class="sponsors partner-donor columns five"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $professional_development_header, $professional_development_sponsor_markup);
 
             }        
 
@@ -715,13 +715,16 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $wine_sponsors_sponsor_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+                    $wine_sponsors_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
             
                 endforeach;  
 
-                 $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $wine_sponsor_header, $wine_sponsors_sponsor_markup);
+                 $wine_sponsors .= sprintf('<div class="sponsors partner-donor columns five"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $wine_sponsor_header, $wine_sponsors_sponsor_markup);
 
             }    
+
+
+            $out .= sprintf('<div class="row sponsors">%s%s</div>', $pro_dev_sponsors, $wine_sponsors);
 
 
 

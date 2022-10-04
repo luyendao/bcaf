@@ -380,6 +380,16 @@ if ( get_field('display_sponsors', $pid)):
             if (get_field('rename_presentation_sponsors_header', $pid)) {
                 $presentation_header = get_field('rename_presentation_sponsors_header', $pid);
             }                       
+        
+            if (get_field('rename_wine_sponsor_header', $pid)) {
+                $wine_sponsor_header = get_field('rename_wine_sponsor_header', $pid);
+            }  
+
+            if (get_field('rename_professional_development_sponsor', $pid)) {
+                $professional_development_header = get_field('rename_professional_development_sponsor', $pid);
+            }  
+
+
         }  
 
 
@@ -661,10 +671,61 @@ if ( get_field('display_sponsors', $pid)):
 
                  $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $donor_header, $donors_markup);
 
-                
             }        
 
 
+        /* PRO DEV SPONSORS */
+
+            if ( get_field('professional_development_sponsor', $pid)) {
+
+                $donors = get_field('professional_development_sponsor', $pid);
+
+                // Returns sponsor post ID
+                foreach( $donors as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $professional_development_sponsor_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
+
+                 $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $professional_development_header, $professional_development_sponsor_markup);
+
+            }        
+
+
+        /* WINE SPONSORS */
+
+            if ( get_field('wine_sponsors', $pid)) {
+
+                $donors = get_field('wine_sponsors', $pid);
+
+                // Returns sponsor post ID
+                foreach( $donors as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $wine_sponsors_sponsor_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
+
+                 $out .= sprintf('<div class="sponsors partner-donor"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $wine_sponsor_header, $wine_sponsors_sponsor_markup);
+
+            }    
+
+
+
+            // Return final output
             return $out;
 
 
@@ -673,6 +734,7 @@ if ( get_field('display_sponsors', $pid)):
         endif;
 
 
+        // If not IBA Category
         if ( $term_cat_id !== 5 ):
 
         // ****** LEAD SPONSOR ******* //

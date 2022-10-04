@@ -690,7 +690,7 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $professional_development_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+                    $professional_development_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img style="max-width: 350px;" src="%s" alt="" /></a></div>', $url, $logo );
             
                 endforeach;  
 
@@ -715,7 +715,7 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $wine_sponsors_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+                    $wine_sponsors_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" style="max-width: 350px;" alt="" /></a></div>', $url, $logo );
             
                 endforeach;  
 

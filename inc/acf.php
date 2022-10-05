@@ -792,7 +792,7 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $presentation_sponsor_markup .= sprintf('<div class="columns four"><a href="%s" target="_blank"><img src="%s" alt="" style="max-width: 250px;" /></a></div>', $url, $logo );
+                    $presentation_sponsor_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" style="max-width: 250px;" /></a></div>', $url, $logo );
 
                 endforeach;
 
@@ -828,7 +828,7 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $sponsors_markup .= sprintf('<div class="columns twelve sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+                    $sponsors_markup .= sprintf('<div class="columns three sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
             
                 endforeach;        
 
@@ -859,7 +859,7 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $sponsors_markup .= sprintf('<div class="columns four sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+                    $sponsors_markup .= sprintf('<div class="columns three sponsors" style="margin-left: 0 !important;"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
             
                 endforeach;  
 
@@ -891,7 +891,7 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $event_partners_markup .= sprintf('<div class="columns four"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+                    $event_partners_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
             
                 endforeach;  
 
@@ -921,7 +921,7 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $supporting_sponsors_markup .= sprintf('<div class="columns four"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+                    $supporting_sponsors_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
             
                 endforeach;  
 

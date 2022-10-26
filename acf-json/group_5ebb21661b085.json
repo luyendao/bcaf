@@ -499,6 +499,31 @@
             "placeholder": "",
             "prepend": "",
             "append": ""
+        },
+        {
+            "key": "field_635887b1c87f1",
+            "label": "Community Partners",
+            "name": "community_partners",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "sponsor"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": "",
+            "elements": ""
         }
     ],
     "location": [
@@ -519,5 +544,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1664910675
+    "modified": 1666746316
 }

@@ -8,7 +8,7 @@
 add_shortcode( 'past_programs', '_past_programs' );
 
 // Line 314
-add_shortcode( 'award_sponsors', '_iba_award_sponsors' );
+add_shortcode( 'award_sponsors', '_award_sponsors' );
 add_shortcode( 'awardees', '_awardees_by_taxonomy' );
 
 add_shortcode( 'awardees_banner', '_awardees_banner' );
@@ -317,7 +317,7 @@ function _past_programs($atts){
 
 // Shortcode: [award_sponsors pid=]
 
-function _iba_award_sponsors($atts) {
+function _award_sponsors($atts) {
 
 // Default value for shortcode is current post ID
  extract(shortcode_atts(array(
@@ -357,7 +357,7 @@ if ( get_field('display_sponsors', $pid)):
         $event_header = "Event Partners";
         $donor_header = "Donors";
         $supporting_header = "Organizations";
-
+        $community_partners_header = "Community Partners";
 
         // Override IBA Sponsor Headers
         if (get_field('override_sponsor_level_labels', $pid) == 1) {
@@ -389,6 +389,10 @@ if ( get_field('display_sponsors', $pid)):
             if (get_field('rename_professional_development_sponsor', $pid)) {
                 $professional_development_header = get_field('rename_professional_development_sponsor', $pid);
             }  
+
+            //if (get_field('rename_community_partners', $pid)) {
+            //    $community_partners_header = get_field('rename_community_partners', $pid);
+            //}              
 
 
         }  
@@ -643,7 +647,7 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $supporting_sponsors_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" alt="" /></a></div>', $url, $logo );
+                    $supporting_sponsors_markup .= sprintf('<div class="columns three"><a href="%s" target="_blank"><img src="%s" style="max-width: 330px;" alt="" /></a></div>', $url, $logo );
             
                 endforeach;  
 
@@ -695,7 +699,7 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $professional_development_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img style="max-width: 350px;" src="%s" alt="" /></a></div>', $url, $logo );
+                    $professional_development_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img style="max-width: 330px;" src="%s" alt="" /></a></div>', $url, $logo );
             
                 endforeach;  
 
@@ -720,7 +724,7 @@ if ( get_field('display_sponsors', $pid)):
                     }
                     $alt_title = get_field(get_the_title($sid));
 
-                    $wine_sponsors_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" style="max-width: 350px;" alt="" /></a></div>', $url, $logo );
+                    $wine_sponsors_sponsor_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" style="max-width: 330px;" alt="" /></a></div>', $url, $logo );
             
                 endforeach;  
 
@@ -729,7 +733,33 @@ if ( get_field('display_sponsors', $pid)):
             }    
 
 
-            $out .= sprintf('<div class="row sponsors">%s%s</div>', $pro_dev_sponsors, $wine_sponsors);
+
+        /* COMMUNITY PARTNERS */
+
+            if ( get_field('community_partners', $pid)) {
+
+                $donors = get_field('community_partners', $pid);
+
+                // Returns sponsor post ID
+                foreach( $donors as $sid ): 
+
+                    $logo = get_field('sponsor_logo', $sid);
+                    $url = get_field('sponsor_website_url', $sid);
+                    if (empty($url)) {
+                        $url = 'javascript:;';
+                    }
+                    $alt_title = get_field(get_the_title($sid));
+
+                    $community_partners_markup .= sprintf('<div class="columns twelve"><a href="%s" target="_blank"><img src="%s" style="max-width: 330px;" alt="" /></a></div>', $url, $logo );
+            
+                endforeach;  
+
+                 $community_partners .= sprintf('<div class="sponsors partner-donor columns five"><h4>%s</h4><hr style="background-color:#00000012; margin-bottom: 15px;" />%s</div>', $community_partners_header, $community_partners_markup);
+
+            }                
+
+
+            $out .= sprintf('<div class="row sponsors">%s%s%s</div>', $pro_dev_sponsors, $wine_sponsors, $community_partners);
 
 
 

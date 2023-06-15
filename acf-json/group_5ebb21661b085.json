@@ -6,6 +6,7 @@
             "key": "field_5ee2e0876c693",
             "label": "Display Sponsors?",
             "name": "display_sponsors",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "",
             "required": 0,
@@ -25,6 +26,7 @@
             "key": "field_5f7254c5bb67c",
             "label": "Sponsors Section Header",
             "name": "sponsors_section_header",
+            "aria-label": "",
             "type": "text",
             "instructions": "Enter text here to override the default header copy \"With thanks to our program partners\".",
             "required": 0,
@@ -35,15 +37,16 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5ebc5a4505c80",
             "label": "Customize Sponsor Category Labels?",
             "name": "override_sponsor_level_labels",
+            "aria-label": "",
             "type": "true_false",
             "instructions": "This allows you to rename the existing sponsor category labels, to whatever is desired.",
             "required": 0,
@@ -60,9 +63,38 @@
             "ui_off_text": ""
         },
         {
+            "key": "field_648b4a0eb3aba",
+            "label": "Row 1 : Rename Sponsor Header",
+            "name": "rename_sponsor_ supporting_organizations",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ebc5a4505c80",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_5ee3c4433b9e3",
             "label": "Select Sponsor(s)",
             "name": "supporting_organizations",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "Supporting Organizations",
             "required": 0,
@@ -88,8 +120,9 @@
         },
         {
             "key": "field_5ebc59bd05c7c",
-            "label": "Rename Sponsor Header",
+            "label": "Row 2 : Rename Sponsor Header",
             "name": "rename_sponsor_header",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -108,15 +141,16 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5ebb2182a2c07",
             "label": "Select Sponsor(s)",
             "name": "partner_type_sponsor",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -142,6 +176,7 @@
             "key": "field_61576628bc368",
             "label": "Rename Sponsor Header",
             "name": "rename_presentation_sponsors_header",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -160,15 +195,16 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_61576617bc367",
             "label": "Select Sponsor(s)",
             "name": "presentation_sponsors",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -192,8 +228,9 @@
         },
         {
             "key": "field_5ebc59d105c7d",
-            "label": "Rename Sponsor Header",
+            "label": "Row 3 : Rename Sponsor Header",
             "name": "rename_strategic_partner_header",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -212,15 +249,16 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5ebb21a9a2c08",
             "label": "Select Sponsor(s)",
             "name": "partner_type_strategic_partner",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -243,9 +281,38 @@
             "return_format": "object"
         },
         {
+            "key": "field_648b51b36a8c8",
+            "label": "Row 5 : Rename Alumni Sponsor",
+            "name": "rename_alumni_sponsor",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ebc5a4505c80",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
             "key": "field_6321061f40663",
             "label": "Select Alumni Sponsors",
             "name": "alumni_program_sponsor",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -268,9 +335,10 @@
             "return_format": "id"
         },
         {
-            "key": "field_5ebc59e305c7e",
-            "label": "Rename Sponsor Header",
-            "name": "rename_event_partner_header",
+            "key": "field_648b52bcaf34f",
+            "label": "Row 4 : Rename Elders' & Dancers' Sponsor Header",
+            "name": "rename_elders_dancers_sponsor_header",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -289,15 +357,125 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
+        },
+        {
+            "key": "field_648b52d0af350",
+            "label": "Select Elders' & Dancers' Sponsor",
+            "name": "elders_dancers_sponsor",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "sponsor"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": "",
+            "elements": ""
+        },
+        {
+            "key": "field_5ebc59e305c7e",
+            "label": "Row 5 :Rename Sponsor Header",
+            "name": "rename_event_partner_header",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ebc5a4505c80",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
         },
         {
             "key": "field_5ebb21b8a2c09",
             "label": "Select Sponsor(s)",
             "name": "partner_type_event_partner",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "sponsor"
+            ],
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "elements": "",
+            "min": "",
+            "max": "",
+            "return_format": "id"
+        },
+        {
+            "key": "field_648b51f96a8c9",
+            "label": "Row 6 : Rename Supporting Sponsors Header",
+            "name": "rename_supporting_sponsors",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ebc5a4505c80",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_632105fa40662",
+            "label": "Select Supporting Sponsor(s)",
+            "name": "supporting_sponsors",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -321,8 +499,9 @@
         },
         {
             "key": "field_5ebc59ea05c7f",
-            "label": "Rename Sponsor Header",
+            "label": "Row 7 : Rename Media Sponsor Header",
             "name": "rename_donor_header",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -341,15 +520,16 @@
                 "id": ""
             },
             "default_value": "",
+            "maxlength": "",
             "placeholder": "",
             "prepend": "",
-            "append": "",
-            "maxlength": ""
+            "append": ""
         },
         {
             "key": "field_5ebb21c7a2c0a",
             "label": "Select Media Sponsor(s)",
             "name": "partner_type_donor",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -372,9 +552,38 @@
             "return_format": "id"
         },
         {
-            "key": "field_632105fa40662",
-            "label": "Select Supporting Sponsor(s)",
-            "name": "supporting_sponsors",
+            "key": "field_6359b4da9ef49",
+            "label": "Row 8 : Rename Community Partners",
+            "name": "rename_community_partners",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ebc5a4505c80",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_635894dc0bcd9",
+            "label": "Select Community Partners",
+            "name": "community_partners",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -387,19 +596,76 @@
             "post_type": [
                 "sponsor"
             ],
+            "post_status": "",
             "taxonomy": "",
             "filters": [
                 "search"
             ],
-            "elements": "",
+            "return_format": "id",
             "min": "",
             "max": "",
-            "return_format": "id"
+            "elements": ""
+        },
+        {
+            "key": "field_648b4c4cb0473",
+            "label": "Rename Strategic Partners",
+            "name": "rename_strategic_partners",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_5ebc5a4505c80",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_648b4c64b0474",
+            "label": "Strategic Partners",
+            "name": "strategic_partners",
+            "aria-label": "",
+            "type": "relationship",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "sponsor"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "filters": [
+                "search"
+            ],
+            "return_format": "id",
+            "min": "",
+            "max": "",
+            "elements": ""
         },
         {
             "key": "field_63348f6551f60",
-            "label": "Rename Wine Sponsor Header",
+            "label": "Row 9 : Rename Wine Sponsor Header",
             "name": "rename_wine_sponsor_header",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -427,6 +693,7 @@
             "key": "field_63348f5351f5f",
             "label": "Select Wine Sponsors",
             "name": "wine_sponsors",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -449,34 +716,10 @@
             "elements": ""
         },
         {
-            "key": "field_633c852fc6a03",
-            "label": "Professional Development Sponsor",
-            "name": "professional_development_sponsor",
-            "type": "relationship",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "post_type": [
-                "sponsor"
-            ],
-            "taxonomy": "",
-            "filters": [
-                "search"
-            ],
-            "return_format": "id",
-            "min": "",
-            "max": "",
-            "elements": ""
-        },
-        {
-            "key": "field_633c8521c6a02",
-            "label": "Rename Professional Development Sponsor",
+            "key": "field_633c83849b7fb",
+            "label": "Row 8 : Rename Professional Development Sponsor",
             "name": "rename_professional_development_sponsor",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -501,9 +744,10 @@
             "append": ""
         },
         {
-            "key": "field_635887b1c87f1",
-            "label": "Community Partners",
-            "name": "community_partners",
+            "key": "field_633c83959b7fc",
+            "label": "Professional Development Sponsor",
+            "name": "professional_development_sponsor",
+            "aria-label": "",
             "type": "relationship",
             "instructions": "",
             "required": 0,
@@ -544,5 +788,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1666746316
+    "modified": 1686852740
 }

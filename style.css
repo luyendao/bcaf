@@ -1089,9 +1089,9 @@ line-height: 24px;
 
 /* Defunct */
 .award_categories-bc-achievement-community-award .awardees-banner { background:url('images/com-banner.jpg') repeat-y; position:relative;  }
-.award_categories-carter-wosk-award-in-applied-art-and-design .awardees-banner { background:url('images/aad-banner.jpg')  repeat-y; position:relative; }
+.award_categories-applied-art-and-design-award .awardees-banner { background:url('images/aad-banner.jpg')  repeat-y; position:relative; }
 .award_categories-bc-indigenous-business-award .awardees-banner { background:url('images/iba-banner.jpg')  repeat-y; position:relative;  }
-.award_categories-fulmer-award-in-first-nations-art .awardees-banner { background:url('images/fna-banner.jpg')  repeat-y; position:relative; }
+.award_categories-first-nations-art-award .awardees-banner { background:url('images/fna-banner.jpg')  repeat-y; position:relative; }
 .award_categories-reconciliation-award .awardees-banner { background:url('images/rec-banner.jpg')  repeat-y; position:relative; }
 
 
@@ -1103,12 +1103,12 @@ line-height: 24px;
 
 
 /* AAD */
-.award_categories-carter-wosk-award-in-applied-art-and-design .nomination-status h2, 
-.award_categories-carter-wosk-award-in-applied-art-and-design .awardee-meta-color-fill h1, 
-.award_categories-carter-wosk-award-in-applied-art-and-design .awardee-meta-color-fill .elementor-post-info__terms-list-item,
-.award_categories-carter-wosk-award-in-applied-art-and-design.type-awardee span.elementor-divider-separator,
-.award_categories-carter-wosk-award-in-applied-art-and-design.type-awardee .elementor-blockquote__author,
-.award_categories-carter-wosk-award-in-applied-art-and-design.type-awardee .elementor-blockquote::before,
+.award_categories-applied-art-and-design-award .nomination-status h2, 
+.award_categories-applied-art-and-design-award .awardee-meta-color-fill h1, 
+.award_categories-applied-art-and-design-award .awardee-meta-color-fill .elementor-post-info__terms-list-item,
+.award_categories-applied-art-and-design-award.type-awardee span.elementor-divider-separator,
+.award_categories-applied-art-and-design-award.type-awardee .elementor-blockquote__author,
+.award_categories-applied-art-and-design-award.type-awardee .elementor-blockquote::before,
 .text-color-aad
 { color: #619f45 !important; }
 
@@ -1123,12 +1123,12 @@ line-height: 24px;
 { color: #df8627 !important; }
 
 /* FNA */
-.award_categories-fulmer-award-in-first-nations-art .nomination-status h2,
-.award_categories-fulmer-award-in-first-nations-art .awardee-meta-color-fill h1,
-.award_categories-fulmer-award-in-first-nations-art .awardee-meta-color-fill .elementor-post-info__terms-list-item,
-.award_categories-fulmer-award-in-first-nations-art.type-awardee span.elementor-divider-separator,
-.award_categories-fulmer-award-in-first-nations-art.type-awardee .elementor-blockquote__author,
-.award_categories-fulmer-award-in-first-nations-art.type-awardee .elementor-blockquote::before,
+.award_categories-first-nations-art-award .nomination-status h2,
+.award_categories-first-nations-art-award .awardee-meta-color-fill h1,
+.award_categories-first-nations-art-award .awardee-meta-color-fill .elementor-post-info__terms-list-item,
+.award_categories-first-nations-art-award.type-awardee span.elementor-divider-separator,
+.award_categories-first-nations-art-award.type-awardee .elementor-blockquote__author,
+.award_categories-first-nations-art-award.type-awardee .elementor-blockquote::before,
 .text-color-fna
  { color: #a25855 !important; }
 
@@ -1170,14 +1170,14 @@ line-height: 24px;
 
 
 /* SUPPORT BAR */
-.single-award .award_categories-fulmer-award-in-first-nations-art .program-support-bar { background-color: #A25855 !important; }
+.single-award .award_categories-first-nations-art-award .program-support-bar { background-color: #A25855 !important; }
 .single-award .award_categories-bc-achievement-community-award .program-support-bar {background-color: #6166AF !important; }
 .single-award .award_categories-bc-indigenous-business-award .program-support-bar { background-color: #DF8627 !important; }
-.single-award .award_categories-carter-wosk-award-in-applied-art-and-design .program-support-bar{ }
+.single-award .award_categories-applied-art-and-design-award .program-support-bar{ }
 .single-award .award_categories-reconciliation-award .program-support-bar { background-color: #E7B444 !important; }
 
 /* BODY COPY BG */
-.single-award .award_categories-fulmer-award-in-first-nations-art .program-body-copy {
+.single-award .award_categories-first-nations-art-award .program-body-copy {
 	background-color:  #dac8c7 !important;
 }
 
@@ -1193,7 +1193,7 @@ line-height: 24px;
 	background-color:  #e4d4c4 !important;
 }
 
-.single-award .award_categories-carter-wosk-award-in-applied-art-and-design .program-body-copy { 
+.single-award .award_categories-applied-art-and-design-award .program-body-copy { 
 	background-color:  #46683733 !important;
 }
 
@@ -1209,9 +1209,9 @@ line-height: 24px;
 
 /* Taxonomy Icon Colors 
 .award_categories-bc-achievement-community-award .elementor-icon i:before { color: #6166af !important; }
-.award_categories-carter-wosk-award-in-applied-art-and-design .elementor-icon i:before { color: #619f45 !important; }
+.award_categories-applied-art-and-design-award .elementor-icon i:before { color: #619f45 !important; }
 .award_categories-bc-indigenous-business-award .elementor-icon i:before { color: #df8627 !important; }
-.award_categories-fulmer-award-in-first-nations-art .elementor-icon i:before { color: #a25855 !important; }
+.award_categories-first-nations-art-award .elementor-icon i:before { color: #a25855 !important; }
 .award_categories-reconciliation-award .elementor-icon i:before { color: #E7B444 !important; }
 */
 
@@ -1239,11 +1239,11 @@ line-height: 24px;
 	background-color: #E7B444 !important;
 }
 
-.award_categories-carter-wosk-award-in-applied-art-and-design #award-sub-menu-overlay,
-.award_categories-carter-wosk-award-in-applied-art-and-design #award-sub-menu-overlay > div,
-.award_categories-carter-wosk-award-in-applied-art-and-design #award-sub-menu-overlay a.elementor-button,
-.award_categories-carter-wosk-award-in-applied-art-and-design section.nominate-form-instructions,
-.award_categories-carter-wosk-award-in-applied-art-and-design .awardee-badge .elementor-widget-container,
+.award_categories-applied-art-and-design-award #award-sub-menu-overlay,
+.award_categories-applied-art-and-design-award #award-sub-menu-overlay > div,
+.award_categories-applied-art-and-design-award #award-sub-menu-overlay a.elementor-button,
+.award_categories-applied-art-and-design-award section.nominate-form-instructions,
+.award_categories-applied-art-and-design-award .awardee-badge .elementor-widget-container,
 .bg-color-aad
 {
 	background-color: #619f45 !important;
@@ -1260,11 +1260,11 @@ line-height: 24px;
 	background-color: #df8627 !important;
 }
 
-.award_categories-fulmer-award-in-first-nations-art #award-sub-menu-overlay,
-.award_categories-fulmer-award-in-first-nations-art #award-sub-menu-overlay > div,
-.award_categories-fulmer-award-in-first-nations-art #award-sub-menu-overlay a.elementor-button,
-.award_categories-fulmer-award-in-first-nations-art section.nominate-form-instructions,
-.award_categories-fulmer-award-in-first-nations-art .awardee-badge .elementor-widget-container,
+.award_categories-first-nations-art-award #award-sub-menu-overlay,
+.award_categories-first-nations-art-award #award-sub-menu-overlay > div,
+.award_categories-first-nations-art-award #award-sub-menu-overlay a.elementor-button,
+.award_categories-first-nations-art-award section.nominate-form-instructions,
+.award_categories-first-nations-art-award .awardee-badge .elementor-widget-container,
 .bg-color-fna
  {
 	background-color: #a25855 !important;
@@ -1349,8 +1349,8 @@ line-height: 24px;
 }
 
 .tax-carter-wosk-applied-art-design-award,
-.tax-carter-wosk-award-in-applied-art-and-design,
-.carter-wosk-award-in-applied-art-and-design {
+.tax-applied-art-and-design-award,
+.applied-art-and-design-award {
     color: #619f45 !important;
 }
 
@@ -1362,7 +1362,7 @@ line-height: 24px;
 
 .tax-fulmer-award-first-nations-art,
 .tax-fulmer-award-first-nations-art,
-.fulmer-award-in-first-nations-art  {
+.first-nations-art-award  {
     color: #a25855 !important;
 }
 
@@ -1563,10 +1563,20 @@ li.awardee-aod  .columns.eight {
 	margin-top: 0px;
 }
 
-.sponsors.columns {
-	margin-left: 0 !important;
+.row.sponsors.flex {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
 }
 
+.sponsors.columns {
+	margin-left: 0 !important;
+	padding-right: 10px;
+}
+
+.sponsors.columns img {
+	max-width: 240px !important;
+}
 
 .sponsors h4 {
 	font-size:20px;
@@ -1653,7 +1663,7 @@ background: #fff !important;
 	border-color: #6065AF !important;
 }
 
-.ecs-post-loop .category-carter-wosk-applied-art-design-award .elementor-element-populated,
+.ecs-post-loop .category-applied-art-design-award .elementor-element-populated,
 .border-aad .elementor-element-populated {
 	border-color: #5F9F44 !important;
 }
@@ -1662,7 +1672,7 @@ background: #fff !important;
 	border-color: #DF8527 !important;
 }
 
-.ecs-post-loop.category-fulmer-award-first-nations-art .elementor-element-populated,
+.ecs-post-loop .category-first-nations-art-award .elementor-element-populated,
 	.border-fna .elementor-element-populated {
 	border-color: #A25854 !important;
 }

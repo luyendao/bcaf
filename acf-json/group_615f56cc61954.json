@@ -6,6 +6,7 @@
             "key": "field_615f57b3e6cb4",
             "label": "Select Grid Layout",
             "name": "grid_type_select",
+            "aria-label": "",
             "type": "select",
             "instructions": "If selecting 6 blogs, this is automated and editorial blocks will not show up.",
             "required": 0,
@@ -34,6 +35,7 @@
             "key": "field_615f58223cf08",
             "label": "Editorial Blocks",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -50,6 +52,7 @@
             "key": "field_6189922cb99e0",
             "label": "First Editorial Block Video",
             "name": "first_editorial_block_video",
+            "aria-label": "",
             "type": "url",
             "instructions": "Enter a Youtube URL, i.e. : https:\/\/www.youtube.com\/watch?v=5New1mrWldQ",
             "required": 0,
@@ -81,6 +84,7 @@
             "key": "field_615f58083cf07",
             "label": "First Editorial Block Header",
             "name": "first_editorial_block_header",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -108,6 +112,7 @@
             "key": "field_615f5b39ed53b",
             "label": "First Editorial Block Category",
             "name": "first_editorial_block_category",
+            "aria-label": "",
             "type": "select",
             "instructions": "This will determine the border color.",
             "required": 0,
@@ -151,7 +156,8 @@
             "key": "field_615f583c3cf09",
             "label": "First Editorial Block Link",
             "name": "first_editorial_block_link",
-            "type": "page_link",
+            "aria-label": "",
+            "type": "url",
             "instructions": "What does the announcement link to? Leave empty if there's no link.",
             "required": 0,
             "conditional_logic": [
@@ -168,21 +174,14 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": [
-                "page",
-                "award",
-                "awardee",
-                "post"
-            ],
-            "taxonomy": "",
-            "allow_null": 0,
-            "allow_archives": 0,
-            "multiple": 0
+            "default_value": "",
+            "placeholder": ""
         },
         {
             "key": "field_615f5ac48feb4",
             "label": "First Editorial Image",
             "name": "first_editorial_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "What does the announcement link to? Leave empty if there's no link.",
             "required": 0,
@@ -201,7 +200,6 @@
                 "id": ""
             },
             "return_format": "array",
-            "preview_size": "medium",
             "library": "all",
             "min_width": "",
             "min_height": "",
@@ -209,12 +207,14 @@
             "max_width": "",
             "max_height": "",
             "max_size": "",
-            "mime_types": ""
+            "mime_types": "",
+            "preview_size": "medium"
         },
         {
             "key": "field_615f58823cf0a",
             "label": "Second Editorial Block Header",
             "name": "second_editorial_block_header",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -242,6 +242,7 @@
             "key": "field_615f5b90ed53c",
             "label": "Second Editorial Block Category",
             "name": "second_editorial_block_category",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -278,6 +279,7 @@
             "key": "field_615f58d83cf0b",
             "label": "Second Editorial Block Link",
             "name": "second_editorial_block_link",
+            "aria-label": "",
             "type": "url",
             "instructions": "What does the announcement link to? Leave empty if there's no link.",
             "required": 0,
@@ -302,6 +304,7 @@
             "key": "field_615f5ad58feb5",
             "label": "Second Editorial Block Image",
             "name": "second_editorial_block_image",
+            "aria-label": "",
             "type": "image",
             "instructions": "What does the announcement link to? Leave empty if there's no link.",
             "required": 0,
@@ -334,6 +337,7 @@
             "key": "field_6160a42e9ddb6",
             "label": "Rest of Page",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -350,6 +354,7 @@
             "key": "field_615f59a330016",
             "label": "Newsletter Sign-Up Header",
             "name": "newsletter_sign-up_header",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -369,6 +374,7 @@
             "key": "field_615f59b430017",
             "label": "About BCAF Header",
             "name": "about_bcaf_header",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -388,6 +394,7 @@
             "key": "field_615f59c130018",
             "label": "About BCAF Copy",
             "name": "about_bcaf_copy",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -410,6 +417,13 @@
                 "param": "page",
                 "operator": "==",
                 "value": "16"
+            }
+        ],
+        [
+            {
+                "param": "page",
+                "operator": "==",
+                "value": "16899"
             }
         ]
     ],
@@ -436,5 +450,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1642438759
+    "modified": 1673382617
 }

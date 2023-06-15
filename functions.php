@@ -122,7 +122,7 @@ add_action( 'widgets_init', 'bcaf_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bcaf_scripts() {
-	wp_enqueue_style( 'bcaf-style', get_stylesheet_uri(), array(), '1.143');
+	wp_enqueue_style( 'bcaf-style', get_stylesheet_uri(), array(), '1.145341321');
 	wp_enqueue_style( 'skeleton-grid', get_template_directory_uri() . '/skeleton.css' , array(), '1.5213');
 
 	wp_enqueue_script( 'bcaf-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -188,3 +188,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+function sort_by_modified( $wp_query ) {
+    global $pagenow;
+    if ( is_admin() && 'edit.php' == $pagenow) {
+        $wp_query->set( 'orderby', 'modified' );
+        $wp_query->set( 'order', 'DESC' );
+    }
+}
+add_filter('pre_get_posts', 'sort_by_modified' );

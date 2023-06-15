@@ -6,6 +6,7 @@
             "key": "field_6164ab4968c76",
             "label": "Welcome to Program Settings",
             "name": "",
+            "aria-label": "",
             "type": "message",
             "instructions": "",
             "required": 0,
@@ -23,6 +24,7 @@
             "key": "field_61650b24fd7e6",
             "label": "Our Programs Global Bar",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -39,6 +41,7 @@
             "key": "field_61650b3cfd7e7",
             "label": "Programs Intro Copy",
             "name": "programs_intro_copy",
+            "aria-label": "",
             "type": "textarea",
             "instructions": "",
             "required": 0,
@@ -58,6 +61,7 @@
             "key": "field_6164ad15c9705",
             "label": "COM Settings",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -74,6 +78,7 @@
             "key": "field_6164a8457ceef",
             "label": "COM Nomination Status",
             "name": "com_status",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -100,6 +105,7 @@
             "key": "field_6192cd8ec1e19",
             "label": "COM Dates",
             "name": "com_dates",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -119,6 +125,7 @@
             "key": "field_6164a8901299c",
             "label": "COM Link",
             "name": "com_link",
+            "aria-label": "",
             "type": "page_link",
             "instructions": "Link to the current active program.",
             "required": 0,
@@ -131,19 +138,21 @@
             "post_type": [
                 "award"
             ],
-            "taxonomy": [
-                "award_categories:bc-achievement-community-award",
-                "award_year:2021",
-                "award_year:2022"
+            "post_status": [
+                "publish"
             ],
-            "allow_null": 0,
+            "taxonomy": [
+                "award_categories:bc-achievement-community-award"
+            ],
             "allow_archives": 0,
-            "multiple": 0
+            "multiple": 0,
+            "allow_null": 0
         },
         {
             "key": "field_6164ad29c9706",
             "label": "AAD Settings",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -160,6 +169,7 @@
             "key": "field_6164aa028f14d",
             "label": "AAD Nominations Status",
             "name": "aad_status",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -186,6 +196,7 @@
             "key": "field_6192ce4ec1e1a",
             "label": "AAD Dates",
             "name": "aad_dates",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -205,6 +216,7 @@
             "key": "field_6164aa7d5857c",
             "label": "AAD Link",
             "name": "aad_link",
+            "aria-label": "",
             "type": "page_link",
             "instructions": "Link to the current active program.",
             "required": 0,
@@ -217,19 +229,21 @@
             "post_type": [
                 "award"
             ],
-            "taxonomy": [
-                "award_year:2021",
-                "award_categories:carter-wosk-award-in-applied-art-and-design",
-                "award_year:2022"
+            "post_status": [
+                "publish"
             ],
-            "allow_null": 0,
+            "taxonomy": [
+                "award_categories:applied-art-and-design-award"
+            ],
             "allow_archives": 0,
-            "multiple": 0
+            "multiple": 0,
+            "allow_null": 0
         },
         {
             "key": "field_6164adbf5286b",
             "label": "FNA Settings",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -246,6 +260,7 @@
             "key": "field_6164aa218f14e",
             "label": "FNA Nominations Status",
             "name": "fna_status",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -272,6 +287,7 @@
             "key": "field_6192ce6fc1e1c",
             "label": "FNA Dates",
             "name": "fna_dates",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -291,6 +307,7 @@
             "key": "field_6164aa9a5857d",
             "label": "FNA Link",
             "name": "fna_link",
+            "aria-label": "",
             "type": "page_link",
             "instructions": "Link to the current active program.",
             "required": 0,
@@ -303,19 +320,21 @@
             "post_type": [
                 "award"
             ],
-            "taxonomy": [
-                "award_year:2021",
-                "award_categories:fulmer-award-in-first-nations-art",
-                "award_year:2022"
+            "post_status": [
+                "publish"
             ],
-            "allow_null": 0,
+            "taxonomy": [
+                "award_categories:first-nations-art-award"
+            ],
             "allow_archives": 0,
-            "multiple": 0
+            "multiple": 0,
+            "allow_null": 0
         },
         {
             "key": "field_6164adde5286c",
             "label": "IBA Settings",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -332,6 +351,7 @@
             "key": "field_6164aa2b8f14f",
             "label": "IBA Nominations Status",
             "name": "iba_status",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -358,6 +378,7 @@
             "key": "field_6192ce62c1e1b",
             "label": "IBA Dates",
             "name": "",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -377,6 +398,7 @@
             "key": "field_6164aab75857e",
             "label": "IBA Link",
             "name": "iba_link",
+            "aria-label": "",
             "type": "page_link",
             "instructions": "Link to the current active program.",
             "required": 0,
@@ -386,20 +408,24 @@
                 "class": "",
                 "id": ""
             },
-            "post_type": "",
-            "taxonomy": [
-                "award_year:2021",
-                "award_categories:bc-indigenous-business-award",
-                "award_year:2022"
+            "post_type": [
+                "award"
             ],
-            "allow_null": 0,
+            "post_status": [
+                "publish"
+            ],
+            "taxonomy": [
+                "award_categories:bc-indigenous-business-award"
+            ],
             "allow_archives": 0,
-            "multiple": 0
+            "multiple": 0,
+            "allow_null": 0
         },
         {
             "key": "field_6164adf85286d",
             "label": "REC Settings",
             "name": "",
+            "aria-label": "",
             "type": "tab",
             "instructions": "",
             "required": 0,
@@ -416,6 +442,7 @@
             "key": "field_6164aa368f150",
             "label": "REC Nominations Status",
             "name": "rec_status",
+            "aria-label": "",
             "type": "select",
             "instructions": "",
             "required": 0,
@@ -442,6 +469,7 @@
             "key": "field_6192ce7dc1e1d",
             "label": "REC Dates",
             "name": "rec_dates",
+            "aria-label": "",
             "type": "text",
             "instructions": "",
             "required": 0,
@@ -461,6 +489,7 @@
             "key": "field_6164aacc5857f",
             "label": "REC Link",
             "name": "rec_link",
+            "aria-label": "",
             "type": "page_link",
             "instructions": "Link to the current active program.",
             "required": 0,
@@ -474,13 +503,11 @@
                 "award"
             ],
             "taxonomy": [
-                "award_year:2021",
-                "award_categories:reconciliation-award",
-                "award_year:2022"
+                "award_categories:reconciliation-award"
             ],
-            "allow_null": 0,
             "allow_archives": 0,
-            "multiple": 0
+            "multiple": 0,
+            "allow_null": 0
         }
     ],
     "location": [
@@ -516,5 +543,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1652846079
+    "modified": 1682372252
 }

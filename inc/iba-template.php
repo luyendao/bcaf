@@ -6,8 +6,8 @@ $featured_img_url = get_the_post_thumbnail_url($aid);
 //Usage: aq_resize( $url, $width, $height, $crop, $single, $upscale ) 
 
 if($featured_img_url) {
-	$thumbnail = aq_resize( $featured_img_url, 240, 240, true, true, true);
-	$thumbnail_tag = sprintf('<img src="%s" alt="Image" />', $thumbnail); 
+	//$thumbnail = aq_resize( $featured_img_url, 240, 240, true, true, true);
+	$thumbnail_tag = sprintf('<img src="%s" alt="Image" />', $featured_img_url); 
 } else {
 	$thumbnail_tag = '<img src="https://www.bcachievement.com/wp-content/uploads/2019/05/BCAF-Logo_Solid-White.png" class="awardee-placeholder" />';
 }

@@ -140,7 +140,7 @@ if (!is_admin()) {
 		// $id, $display_title, $display_description, $display_inactive, $field_values, $ajax, $tabindex, $echo
 		gravity_form( $form_id,false, false, false, false, true );
 	} else {
-		die();
+		return;
 	}
 }
 }
